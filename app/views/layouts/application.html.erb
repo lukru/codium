@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+<%= current_user.email %> <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+<% end %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<p class="error"><%= flash[:error] %></p>
+
 <%= yield %>
 
 </body>
