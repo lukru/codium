@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   include ActiveRecordHelpers
 
   has_many :posts
+  has_many :recommendations
   has_many :memberships
   has_many :projects, :through => :memberships
 
