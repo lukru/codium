@@ -27,11 +27,22 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :display_name, use: :slugged
 
-  #before_save :set_display_name
-  #
-  #private
-  #def set_display_name
-  #
-  #end
+  before_save :set_display_name
+
+  private
+  def set_display_name
+    if display_name.nil?
+      first_part = email[/[^@]+/]
+      first_part = first_part.split('').map do |letter|
+        if letter.match(/\A[\w]+\z/)
+          letter
+        else
+          ''
+        end
+      end.join('')
+
+      self.display_name = self.slug = first_part
+    end
+  end
 
 end
