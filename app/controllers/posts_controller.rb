@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
   end
 
-  def list_draft_posts
+  def draft_posts
     @drafts = Post.where(published: false)
   end
 
