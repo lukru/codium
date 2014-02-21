@@ -1,11 +1,13 @@
 <div id="viewpost">
-<h1><%= "#{@post.title}" %></h1>
-<h4><em><%= @post.subtitle %>subtitle goes here</em></h4>
 
-<div id="postbody">
-  <%= @post.body %>
-</div>
+  <h1><%= "#{@post.title}" %></h1>
+  <h4><%= @post.subtitle %></em>
 
-<em>read time</em>
+  <p><%= @post.user %></p>
+
+  <div id="postbody">
+    <%= @post.body %>
+  </div>
+
 </div>
 

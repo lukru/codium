@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.all
   end
@@ -14,13 +13,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    params[:commit] == 'publish' ? published = true : published = false
+    params[:commit] == 'Publish' ? published = true : published = false
     params[:post][:published] = published
     @post = current_user.posts.new(post_params)
     
     respond_to do |format|
       if @post.save
-        format.html { redirect_to action: 'new', notice: 'Post created successfully'}
+        @post.published == true ? notice = 'published' : notice = 'saved as draft'
+        format.html { redirect_to new_post_path, notice: 'Post was successfully ' + notice}
       else
         format.html { render action: 'new', notice: 'Error: cannot able to save the new post'}
       end
