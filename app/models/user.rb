@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :projects, :through => :memberships
 
+  validates :given_name, :family_name, presence: {message: 'You need to insert family name and given name'}
+  validates :tagline, length: {maximum: 255, message: 'Your tag line must have less then 255 characters'}
 end
