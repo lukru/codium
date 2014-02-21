@@ -11,7 +11,8 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
 
   def show
     @posts = Post.all
-    @post = Post.first
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 
   def create
