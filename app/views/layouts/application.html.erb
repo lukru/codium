@@ -12,21 +12,24 @@
 
 </head>
 <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<p class="error"><%= flash[:error] %></p>
 
 <nav>
   <%= render 'shared/newstory' %>
 </nav>
 
-<header>
+<div class="logo-header">
   <%= render 'shared/header' %>
-</header>
+</div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<p class="error"><%= flash[:error] %></p>
+  
+<div class="content clearfix">
+  <%= yield %>
+</div>
 
-<%= yield %>
-<footer>
+<footer class="clearfix">
   <%= render 'shared/footer' %>
 </footer>
 </body>
