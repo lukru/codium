@@ -15,32 +15,46 @@ body{
 .logo span{
   visibility:hidden;
 }
-
-
+.logo-header{
+  height:300px;
+}
+.logo p{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 3px;
+}
 .home-banner{
   width:100%;
   background-image: image-url("header_image.jpg");
   background-size:cover;
   background-position:top ;
   repeat:none;
-  height:320px;
+  height:300px;
   position:absolute;
   top:0;
   left:0;
   z-index:-10;
 }
 .content{
-  width:60%;
+  width:50%;
   margin:0 auto;
-  min-height:100%;
-  margin-bottom:-100px;
+  min-height:400px;
 }
 
 footer{
-  width:60%;
+  width:50%;
   margin:0 auto;
   text-align: left;
   height:100px;
+  border-top:1px solid #666;
+  padding:20px 0;
+  margin-top:30px;
+}
+footer a{
+  color:#000;
 }
 
 a{
@@ -69,7 +83,7 @@ nav a{
 
 .nav_links{
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   text-align: left;
   border-top: 1px solid #5EE19F;
   padding-top: 30px;
@@ -81,5 +95,34 @@ nav a{
 }
 
 .nav_links a{
+  color:#000;
+}
+.post_title{
+  font-family: "helvetica",sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  font-size: 28px;
+  line-height: 1.1;
+  color: #333332;
+  margin-bottom: 12px;
+  padding-top:5%;
+}
+
+.post_subtitle{
+  font-family: "Roboto",sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #666665;
+  margin-bottom: 4px;
+  padding-bottom:5%;
+  border-bottom:1px dashed #ccc;
+}
+.post_subtitle p{
+  font-size:12px;
   color:#000;
 }
