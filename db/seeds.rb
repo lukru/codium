@@ -17,8 +17,6 @@ post = Post.new
 post.user = user
 post.title = 'test post'
 <<<<<<< HEAD
-post.subtitle = 'best post ever'
-post.body = 'blahblahblahblahblah'
 post.save
 
 =======
