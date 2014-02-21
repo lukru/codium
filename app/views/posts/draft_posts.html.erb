@@ -1,0 +1,7 @@
+<h1>Drafts</h1>
+
+<ul>
+    <% @drafts.each do |draft| %>
+    <li><%= draft.title %><%= link_to 'delete', draft, :method => :delete %></li>
+    <% end %>
+</ul>
