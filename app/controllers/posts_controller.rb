@@ -9,6 +9,17 @@ class PostsController < ApplicationController
   end
 
   def create
+    params[:commit] == 'publish' ? published = true : published = false
+    params[:post][:published] = published
+    @post = current_user.posts.new(post_params)
+    
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to action: 'new', notice: 'Post created successfully'}
+      else
+        format.html { render action: 'new', notice: 'Error: cannot able to save the new post'}
+      end
+    end
   end
 
   def destroy
@@ -20,4 +31,11 @@ class PostsController < ApplicationController
       redirect_to posts_path
     end
   end
+
+  private
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :subtitle, :body, :published)
+  end
+
 end
