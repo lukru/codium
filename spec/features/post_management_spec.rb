@@ -27,6 +27,14 @@ feature "page management" do
       expect(page).to have_text('Drafts')
     end
 
+    scenario "edit draft post" do
+      post = Post.create(title: 'test post')
+      visit edit_post_path(post)
+      expect(find_field('Your name').value).to have_text('test post')
+      expect(page).to have_text('Publish')
+    end
+
+
   end
 
   context "not logged in" do
