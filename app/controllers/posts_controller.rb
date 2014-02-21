@@ -1,10 +1,17 @@
 class PostsController < ApplicationController
+before_action :set_post, only: [ :show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
 
   def new
     @post = current_user.posts.new
+  end
+
+  def show
+    @posts = Post.all
+    @post = Post.first
   end
 
   def create
@@ -22,13 +29,35 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @post
+  end 
+
+
+  def update
+    
+    params[:commit] == 'Publish' ? published = true : published = false
+    params[:post][:published] = published
+
+    authorize @post
+    
+    if @post.update(post_params)
+      @post.published == true ? notice = 'published' : notice = 'saved as draft'
+      redirect_to @post, notice: 'Post was successfully ' + notice
+    else
+      render action: 'new', notice: 'Error: cannot able to save post'
+    end
+
+  end
+
+
   def draft_posts
-    @drafts = Post.where(published: false)
+    @drafts = current_user.posts.where(published: false)
   end
 
   def destroy
-    @post = Post.find(params[:id])
     authorize @post
+
     if @post.destroy
       redirect_to posts_path
     else
@@ -37,6 +66,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.find_by_id params[:id]
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
     params.require(:post).permit(:title, :subtitle, :body, :published)

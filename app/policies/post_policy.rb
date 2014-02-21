@@ -10,4 +10,20 @@ class PostPolicy
     user == post.user
   end
 
+  def update?
+    if post.published == false
+      user == post.user
+    else
+      false
+    end
+  end
+
+  def edit?
+    if post.published == false
+      user == post.user
+    else
+      false
+    end
+  end
+
 end
