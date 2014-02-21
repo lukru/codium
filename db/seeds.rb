@@ -2,6 +2,7 @@ User.delete_all
 Post.delete_all
 Recommendation.delete_all
 
+
 user = User.new
 user.email = 'test@test.com'
 user.password = user.password_confirmation = 'password'
@@ -17,6 +18,7 @@ post = Post.new
 post.user = user
 post.title = 'test post'
 post.save
+
 
 post.title = 'Coding Is So Cool'
 post.subtitle = 'Ball tip flank pork belly pig short ribs capicola kielbasa shoulder cow brisket turkey t-bone chuck. Pork loin kielbasa capicola leberkas bacon jowl salami biltong venison landjaeger tongue pork belly flank andouille spare ribs.'
