@@ -19,6 +19,9 @@ post.user = user
 post.title = 'test post'
 post.save
 
+
+
+
 recommendation = Recommendation.new
 recommendation.user = user
 recommendation.post = post
