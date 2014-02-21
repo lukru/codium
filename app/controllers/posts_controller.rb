@@ -9,6 +9,11 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
     @post = current_user.posts.new
   end
 
+  def show
+    @posts = Post.all
+    @post = Post.first
+  end
+
   def create
     params[:commit] == 'Publish' ? published = true : published = false
     params[:post][:published] = published
