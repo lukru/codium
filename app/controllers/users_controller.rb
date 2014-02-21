@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, except: [:profile]
+
   before_action :set_user, only: [:show]
 
   def show
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = User.find_by(id: params[:id])
+    @user = User.friendly.find(params[:display_name])
     unless @user
       flash[:error] = "That user doesn't exits"
       redirect_to '/'

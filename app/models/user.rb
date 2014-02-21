@@ -21,4 +21,17 @@ class User < ActiveRecord::Base
   #def omniauth?
   #  uid && provider
   #end
+
+
+  # Friendly Id
+  extend FriendlyId
+  friendly_id :display_name, use: :slugged
+
+  #before_save :set_display_name
+  #
+  #private
+  #def set_display_name
+  #
+  #end
+
 end

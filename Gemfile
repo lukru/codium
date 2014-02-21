@@ -9,6 +9,9 @@ gem 'omniauth-github'
 gem 'dotenv'
 gem 'pry-rails'
 
+# user friendly id & permalinks
+gem 'friendly_id'
+
 # for testing
 gem 'rspec-rails'
 gem 'capybara'
