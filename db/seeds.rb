@@ -1,6 +1,7 @@
 User.delete_all
 Post.delete_all
 Recommendation.delete_all
+Comment.delete_all
 
 user = User.new
 user.email = 'test@test.com'
@@ -22,3 +23,9 @@ recommendation = Recommendation.new
 recommendation.user = user
 recommendation.post = post
 recommendation.save
+
+comment = Comment.new
+comment.title = 'test comment'
+comment.user = user
+comment.post = post
+comment.save

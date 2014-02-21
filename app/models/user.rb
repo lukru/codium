@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :recommendations
+  has_many :comments
   has_many :memberships
   has_many :projects, :through => :memberships
 
