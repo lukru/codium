@@ -11,6 +11,10 @@ class PostsController < ApplicationController
   def create
   end
 
+  def draft_posts
+    @drafts = Post.where(published: false)
+  end
+
   def destroy
     @post = Post.find(params[:id])
     authorize @post
