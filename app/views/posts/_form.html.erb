@@ -1,7 +1,25 @@
-<%= form_for(@post), html:{role:'form', class:'form'} do |f| %>
+<%= form_for(@post,html: {:role => 'form', :class => 'form'}) do |f| %>
 
   
+<div>
+  <%= f.label :title, 'title' %>
+  <%= f.text_field :title, :placehodler => 'title' %>
+</div>
+
+<div>
+  <%= f.label :subtitle, 'subtitle' %>
+  <%= f.text_field :subtitle, :placehodler => 'subtitle'  %>
+</div>
+
+<div>
+  <%= f.label :body, 'body' %>
+  <%= f.text_area :body, :placehodler => 'body' %>
+</div>
 
 
+<div>
+  <%= f.submit "Save Draft", value: 'draft' %>
+   <%= f.submit "Publish", value: 'publish' %>
+</div>
 
 <% end %>
