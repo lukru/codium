@@ -17,7 +17,6 @@
 
 	  <div class="comment"> <!-- individual comment div -->
 	  
-	    <h4><%= comment.title%></h4>
 	    <p><%= comment.content%></p> <!-- truncate this  -->
 	    <p>Posted by <em><%= comment.user.email %></em> on <em><%= comment.created_at.to_formatted_s(:short)%></em></p>
 
@@ -32,7 +31,18 @@
   <h5>Add a Comment:</h5>
 
   <div class="comment_form">
+	
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+ 
+	  <%= f.label :content %>
+	  <%= f.text_area :content %><br>
 
+	  <%= f.hidden_field :user_id, :value => current_user.id %><br>
+	  <%= f.hidden_field :post_id, :value => @post.id %>
+
+  <%= f.submit %>
+
+<% end %>
   	
   </div>
 
