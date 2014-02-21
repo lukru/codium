@@ -7,6 +7,7 @@ gem 'pundit' # authorization and role management
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv'
+gem 'pry-rails'
 
 # for testing
 gem 'rspec-rails'
