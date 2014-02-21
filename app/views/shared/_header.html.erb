@@ -1,0 +1,7 @@
+<%= link_to 'home', root_path %>
+<%= link_to 'posts', posts_path %>
+<%= link_to 'profile', 'me/profile'%>
+<% if user_signed_in?%>
+<%= current_user.email if current_user %>
+<%= link_to 'log out', users_sign_out %>
+<% end %>

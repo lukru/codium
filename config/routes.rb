@@ -2,5 +2,7 @@ Codium::Application.routes.draw do
 
   resources :posts
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-  root :to => "pages#home" 
+  root :to => 'pages#home'
+
+  get ':action' => "pages#:action"
 end
