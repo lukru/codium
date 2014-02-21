@@ -2,6 +2,9 @@
 
 <ul>
     <% @drafts.each do |draft| %>
-    <li><%= draft.title %><%= link_to 'delete', draft, :method => :delete %></li>
+    <li><%= draft.title %>
+
+    <%= link_to 'edit', edit_post_path(draft), :method => :get %>
+    <%= link_to 'delete', draft, :method => :delete %></li>
     <% end %>
 </ul>

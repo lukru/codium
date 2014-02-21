@@ -1,5 +1,14 @@
+<% @posts.each do |post| %>
+  <div class="post_title">
+    <%= post.title %>
+  </div>
+  <div class="post_subtitle">
+    <%= post.subtitle %>
+    <p>
+      <%= post.created_at %>
+    </p>
+  </div>
+<% end %>
 
-<h1>Codium</h1>
 
-<p>Find me in app/views/pages/home.html.erb</p>
 <!-- posts, projects and header etc, sign in link -->

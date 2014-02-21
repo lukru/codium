@@ -1,6 +1,12 @@
 Codium::Application.routes.draw do
 
+
+  resources :posts do
+  	resources :comments
+  end
+
   # Users
+
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -10,9 +16,8 @@ Codium::Application.routes.draw do
 
   resources :posts
 
-  get '/me/drafts', to: 'posts#draft_posts'
+  get '/me/drafts', to: 'posts#draft_posts'  
+  get '/about', to: 'pages#about'
 
   root :to => 'pages#home'
-  
-  get ':action' => "pages#:action"
 end
