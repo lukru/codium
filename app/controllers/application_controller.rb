@@ -10,8 +10,9 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:given_name, :family_name, :photo, :description, :skills, :tagline]
-    devise_parameter_sanitizer.for(:account_update) << [:given_name, :family_name, :photo, :description, :skills, :tagline]
+    custom_fields = %i('given_name family_name bio tagline display_name')
+    devise_parameter_sanitizer.for(:sign_up) << custom_fields
+    devise_parameter_sanitizer.for(:account_update) << custom_fields
   end
 
 end
