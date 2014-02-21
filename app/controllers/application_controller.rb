@@ -6,4 +6,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user! 
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+  def configure_permitted_parameters
+    custom_fields = %i('given_name family_name bio tagline display_name')
+    devise_parameter_sanitizer.for(:sign_up) << custom_fields
+    devise_parameter_sanitizer.for(:account_update) << custom_fields
+  end
+
 end
