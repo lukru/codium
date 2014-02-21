@@ -1,9 +1,9 @@
 Codium::Application.routes.draw do
 
   # Users
-  get 'users/show'
-  get 'me/profile' => 'Users#profile'
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  get 'users/:id' => 'users#show'
+  get 'me/profile' => 'users#profile'
 
 
   resources :posts
