@@ -5,5 +5,7 @@ Codium::Application.routes.draw do
 
   get '/me/drafts', to: 'posts#draft_posts'
 
-  root :to => "pages#home" 
+  root :to => 'pages#home'
+  
+  get ':action' => "pages#:action"
 end
