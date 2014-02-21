@@ -34,7 +34,7 @@ feature "page management" do
     scenario "view post" do
       post = Post.create(title: "first post")
 
-      visit post
+      visit post_path(post)
       expect(page).to have_text('first post')
     end
 
