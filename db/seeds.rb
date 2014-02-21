@@ -15,4 +15,7 @@ user2.save
 post = Post.new
 post.user = user
 post.title = 'test post'
+post.subtitle = 'best post ever'
+post.body = 'blahblahblahblahblah'
 post.save
+

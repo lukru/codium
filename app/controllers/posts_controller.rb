@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.new
   end
 
+  def show
+    @posts = Post.all
+    @post = Post.first
+  end
+
   def create
     params[:commit] == 'publish' ? published = true : published = false
     params[:post][:published] = published
