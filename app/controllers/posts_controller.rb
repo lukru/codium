@@ -5,9 +5,14 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = current_user.posts.new
   end
 
   def create
+  end
+
+  def draft_posts
+    @drafts = Post.where(published: false)
   end
 
   def destroy
