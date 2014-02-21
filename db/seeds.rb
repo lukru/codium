@@ -16,14 +16,19 @@ user2.save
 post = Post.new
 post.user = user
 post.title = 'test post'
-<<<<<<< HEAD
 post.save
 
-=======
+post.title = 'Coding Is So Cool'
+post.subtitle = 'Ball tip flank pork belly pig short ribs capicola kielbasa shoulder cow brisket turkey t-bone chuck. Pork loin kielbasa capicola leberkas bacon jowl salami biltong venison landjaeger tongue pork belly flank andouille spare ribs.'
 post.save
+
+post2 = Post.new
+post2.user = user
+post2.title = 'Test Post Heading'
+post2.subtitle = 'Ball tip flank pork belly pig short ribs capicola kielbasa shoulder cow brisket turkey t-bone chuck. Pork loin kielbasa capicola leberkas bacon jowl salami biltong venison landjaeger tongue pork belly flank andouille spare ribs.'
+post2.save
 
 recommendation = Recommendation.new
 recommendation.user = user
 recommendation.post = post
 recommendation.save
->>>>>>> 2534adde8870035b649af52812d73ed62439d0ad
