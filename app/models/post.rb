@@ -3,4 +3,5 @@ class Post < ActiveRecord::Base
 
   def word_count
   end
+
 end
