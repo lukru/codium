@@ -17,6 +17,7 @@ body{
 }
 .logo-header{
   height:300px;
+  z-index:-9999!important;
 }
 .logo p{
   padding: 0;
@@ -33,7 +34,7 @@ body{
   background-position:top ;
   repeat:none;
   height:300px;
-  position:absolute;
+  position:relative;
   top:0;
   left:0;
   z-index:-10;
@@ -86,12 +87,13 @@ nav a{
   width: 50%;
   text-align: left;
   border-top: 1px solid #5EE19F;
-  padding-top: 30px;
-  margin-top: 30px;
+  padding-top: 16px;
+  margin-top: -49px;
   font-weight: 600;
   color: #000;
   letter-spacing:2px;
   text-transform: uppercase;
+  z-index:10;
 }
 
 .nav_links a{

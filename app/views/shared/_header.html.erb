@@ -1,14 +1,17 @@
 <div class="home-banner">
 
-<div class="logo">
-<span>Codium</span><%= image_tag("codium_logo.png", :alt => "Codium", :width => "200px") %>
-<p>coding moments</p>
+  <div class="logo">
+    <span>Codium</span><%= image_tag("codium_logo.png", :alt => "Codium", :width => "200px") %>
+    <p>coding moments</p>
+  </div>
+
 </div>
+
 <div class="nav_links">
   <%= link_to 'Home', root_path %> :  :
   <%= link_to 'Posts', posts_path %> :  :
 
-  <%unless user_signed_in? %>
+  <% unless user_signed_in? %>
   <%= link_to 'Login', new_user_session_path %> 
   <% end %>
 
@@ -16,6 +19,4 @@
   <%= current_user.email if current_user %>
   <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
   <% end %>
-</div>
-
 </div>
