@@ -8,12 +8,21 @@
 </head>
 <body>
 
+<nav>
+  <%= render 'shared/newstory' %>
+</nav>
+
+<header>
+  <%= render 'shared/header' %>
+</header>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <p class="error"><%= flash[:error] %></p>
 
 <%= yield %>
-
+<footer>
+  <%= render 'shared/footer' %>
+</footer>
 </body>
 </html>
