@@ -156,7 +156,11 @@ nav a:hover{
   color:#000;
   line-height: 32px;
 }
-
+@media (max-width: $screen-lg-min) { 
+  .content, footer, .nav_links{
+    width:60%;
+  }
+}
 @media (max-width: $screen-md-min) { 
   .content, footer, .nav_links{
     width:70%;
