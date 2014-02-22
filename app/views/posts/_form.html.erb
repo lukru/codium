@@ -1,25 +1,26 @@
-<%= form_for(@post,html: {:role => 'form', :class => 'form'}) do |f| %>
+<form role="form">
+  <div class="form-group">
+    <%= form_for(@post,html: {:role => 'form', :class => 'form'}) do |f| %>
+      </div>
 
-  
-  <div>
-    <%= f.label :title, 'Title' %>
-    <%= f.text_field :title, :placehodler => 'title', required: true %>
-  </div>
+      <div class="form-group">
+        <%= f.label :title, 'Title' %>
+        <%= f.text_field :title, :placehodler => 'title', required: true, :class => "form-control" %>
+      </div>
 
-  <div>
-    <%= f.label :subtitle, 'Subtitle' %>
-    <%= f.text_field :subtitle, :placehodler => 'subtitle'  %>
-  </div>
+      <div class="form-group">
+        <%= f.label :subtitle, 'Subtitle' %>
+        <%= f.text_field :subtitle, :placehodler => 'subtitle', :class => "form-control"  %>
+      </div>
 
-  <div>
-    <%= f.label :body, 'Body' %>
-    <%= f.text_area :body, :placehodler => 'body' %>
-  </div>
+      <div class="form-group">
+        <%= f.label :body, 'Body' %>
+        <%= f.text_area :body, :placehodler => 'body', :class => "form-control" %>
+      </div>
 
+      <div class="form-group">
+        <%= f.submit "Save Draft", value: 'Draft', :class => "btn btn-default " %>
+         <%= f.submit "Publish", value: 'Publish', :class => "btn btn-default " %>
+      </div>
 
-  <div>
-    <%= f.submit "Save Draft", value: 'Draft' %>
-     <%= f.submit "Publish", value: 'Publish' %>
-  </div>
-
-<% end %>
+    <% end %>

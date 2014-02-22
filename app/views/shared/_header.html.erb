@@ -8,15 +8,18 @@
 </div>
 
 <div class="nav_links">
-  <%= link_to 'Home', root_path %> :  :
-  <%= link_to 'Posts', posts_path %> :  :
+  <div class="nav_links_left">
+    <%= link_to 'Home', root_path %> :  :
+    <%= link_to 'Posts', posts_path %> 
+  </div>
+  <div class="nav_links_right">
+    <% unless user_signed_in? %>
+    :  : <%= link_to 'Login', new_user_session_path %> 
+    <% end %>
 
-  <% unless user_signed_in? %>
-  <%= link_to 'Login', new_user_session_path %> 
-  <% end %>
-
-  <% if user_signed_in?%>
-  <%= current_user.email if current_user %>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-  <% end %>
+    <% if user_signed_in?%>
+    <span class="user_email_show"><%= current_user.email if current_user %></span>
+    :  : <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+    <% end %>
+  </div>
 </div>

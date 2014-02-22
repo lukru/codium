@@ -2,34 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#viewpost {
-  width: 700px;
-  margin: 0px auto;
+#posthead {
+  font-family: 'Roboto', Helvetica, Arial, "Lucida Sans", sans-serif;
+  padding: 0;
+  margin-bottom: 50px;
 }
-#viewpost h1 {
-  font-family: 'Istok Web', Helvetica, Arial, sans-serif;
+.posttitle {
   font-weight: 700;
+  font-size: 50px;
   font-style: normal;
-  letter-spacing: 0.02em;
-  padding: 0;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.subtitle {
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: -.01em;
+  font-size: 30px;
+  line-height: 1.1;
   margin: 0;
 }
-#viewpost h4 {
-  font-family: 'Istok Web', Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  font-size: 22px;
-  line-height: 1.5;
-  padding: 0;
-  margin: 0;
-}
-
-#postbody {
-  margin-top: 100px;
-  font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
-  letter-spacing: 0.1rem;
+.author {
   font-weight: 400;
   font-style: normal;
+  font-size: 14px;
+  letter-spacing: .01rem;
+  color: #909090;
+}
+#postbody {
+  font-family: 'Roboto Slab', Georgia, Cambria, "Times New Roman", Times, serif;
+  letter-spacing: .01rem;
+  font-weight: 300;
+  font-style: normal;
   font-size: 22px;
   line-height: 1.5;
-  border: 1px dashed #ccc;
+  margin-bottom: 75px;
+}
+#postbody p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .01rem;
+}
+
+#postfooter {
+  font-family: 'Roboto', Helvetica, Arial, "Lucida Sans", sans-serif;
+}
+.written {
+  font-weight: 700;
+  font-style: normal;
+  padding: 10px 0px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: #909090;
+  border-top: 1px solid #5EE19F;
+}
+.authorname {
+  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
 }
