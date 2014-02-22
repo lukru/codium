@@ -9,8 +9,6 @@ feature "page management" do
     visit root_url
     expect(page).to have_text('Codium')
     expect(page).to have_link("Login")
-    expect(page).to have_link("Login")
-
     expect(page).to have_text('test post')
   end
 
