@@ -1,0 +1,15 @@
+<% @jobs.each do |job| %>
+	<div id="job">
+		<h2><%= job.name %></h2>
+		<p><%= job.location %></p>
+		<p><%= job.deadline %></p>
+	</div>
+
+  <p><%= link_to job.name, "#" %></p>
+
+
+<% end %>
+
+<% if current_user %>
+	<p><%= link_to 'Add a Job', user_jobs_new_path(current_user), class:'btn btn-default' %></p>
+<% end %>
