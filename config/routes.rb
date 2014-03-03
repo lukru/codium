@@ -11,10 +11,8 @@ Codium::Application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-  get 'users/:id' => 'users#show'
-  get 'me/profile' => 'users#profile'
-
+  get 'me/profile' => 'users#profile', as: :my_profile
+  get 'users/:username' => 'users#show', as: :user
 
   resources :posts
 

@@ -4,13 +4,13 @@ class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery with: :exception
 
-  before_filter :authenticate_user! 
+  before_filter :authenticate_user!
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
   def configure_permitted_parameters
-    custom_fields = %i('given_name family_name bio tagline display_name')
+    custom_fields = %i(given_name family_name bio tagline username slug)
     devise_parameter_sanitizer.for(:sign_up) << custom_fields
     devise_parameter_sanitizer.for(:account_update) << custom_fields
   end
