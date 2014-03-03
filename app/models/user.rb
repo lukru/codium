@@ -26,13 +26,13 @@ class User < ActiveRecord::Base
 
   # Friendly Id
   extend FriendlyId
-  friendly_id :display_name, use: :slugged
+  friendly_id :username, use: :slugged
 
-  before_save :set_display_name_and_slug
+  before_save :set_username_and_slug
 
   private
-  def set_display_name_and_slug
-    if display_name.nil?
+  def set_username_and_slug
+    if username.nil?
       first_part = email[/[^@]+/]
       first_part = first_part.split('').map do |letter|
         if letter.match(/\A[\w]+\z/)

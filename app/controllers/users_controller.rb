@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   private
   def set_user
-    @user = User.friendly.find(params[:display_name])
+    @user = User.friendly.find(params[:username])
     unless @user
       flash[:error] = "That user doesn't exits"
       redirect_to '/'
