@@ -25,6 +25,7 @@ Codium::Application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'me/profile' => 'users#profile'
 
+  resources :projects
 
   get 'me/profile' => 'users#profile', as: :my_profile
   get 'users/:username' => 'users#show' #, as: :user
