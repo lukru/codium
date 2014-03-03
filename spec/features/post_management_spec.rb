@@ -4,13 +4,16 @@ Warden.test_mode!
 
 feature "page management" do
 
-  context "logged in" do
+  context "when logged in" do
 
-    before(:each) do
-      user = User.new
-      user.email = 'test@test.com'
+    let(:user) do
+      user = User.new(email: 'test@test.com')
       user.password = user.password_confirmation = 'password'
       user.save
+      user
+    end
+
+    before(:each) do
       login_as(user, :scope => :user)
     end
 
@@ -22,22 +25,25 @@ feature "page management" do
       expect(page).to have_text("Post was successfully published")
     end
 
+    scenario "edit draft post" do
+      post = Post.create(title: 'test post', published: false, user: user)
+      visit edit_post_path(post)
+      expect(find_field('Title').value).to have_text('test post')
+      expect(page).to have_button('Publish')
+    end
+
     scenario "view draft post list" do
+      post = Post.create(title: 'awesome story', user: user, published: false)
+      post = Post.create(title: 'history now', user: user, published: true)
       visit '/me/drafts'
       expect(page).to have_text('Drafts')
+      expect(page).to have_text('awesome story')
+      expect(page).to have_no_text('history now')
     end
-
-    scenario "edit draft post" do
-      post = Post.create(title: 'test post')
-      visit edit_post_path(post)
-      expect(find_field('Your name').value).to have_text('test post')
-      expect(page).to have_text('Publish')
-    end
-
 
   end
 
-  context "not logged in" do
+  context "when logged out" do
 
     scenario "view post" do
       post = Post.create(title: "first post")

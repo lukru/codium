@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <div class="post_title">
-    <%= post.title %>
+    <%=link_to post.title, post_path(post) %>
   </div>
   <div class="post_subtitle">
     <%= post.subtitle %>
