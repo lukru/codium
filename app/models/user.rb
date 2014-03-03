@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :memberships
   has_many :jobs
 
+  validates_format_of :username, :with => /\A[A-Za-z0-9]+\Z/
+
   # TODO validation
   #validates :given_name, :family_name,
   #          presence: {message: 'You need to insert family name and given name'},
@@ -23,4 +25,35 @@ class User < ActiveRecord::Base
   #def omniauth?
   #  uid && provider
   #end
+
+
+  def is_owner?(current_user)
+    current_user && current_user.id == self.id
+  end
+
+  # Friendly Id
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
+  before_save :set_username_and_slug
+
+
+  private
+  def set_username_and_slug
+    if username.nil?
+      first_part = email[/[^@]+/]
+      first_part = first_part.split('').map do |letter|
+        if letter.match(/\A[\w]+\z/)
+          letter
+        else
+          ''
+        end
+      end.join('')
+
+      self.username = self.slug = first_part
+    else
+      self.slug = self.username
+    end
+  end
+
 end

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140303004729) do
+=======
+ActiveRecord::Schema.define(version: 20140302233511) do
+>>>>>>> 7f4ced5a3a0cbc956a9f7983fdd601d97fd80638
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140303004729) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "jobs", force: true do |t|
     t.string   "name"
     t.string   "location"
@@ -35,6 +40,20 @@ ActiveRecord::Schema.define(version: 20140303004729) do
   end
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
+=======
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+>>>>>>> 7f4ced5a3a0cbc956a9f7983fdd601d97fd80638
 
   create_table "memberships", force: true do |t|
     t.integer  "user_id"
@@ -86,10 +105,12 @@ ActiveRecord::Schema.define(version: 20140303004729) do
     t.string   "family_name"
     t.text     "bio"
     t.string   "tagline"
-    t.string   "display_name"
+    t.string   "username"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
 end
