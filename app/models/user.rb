@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :memberships
   has_many :projects, :through => :memberships
 
+  validates_format_of :username, :with => /\A[A-Za-z0-9]+\Z/
+
   # TODO validation
   #validates :given_name, :family_name,
   #          presence: {message: 'You need to insert family name and given name'},
@@ -48,6 +50,8 @@ class User < ActiveRecord::Base
       end.join('')
 
       self.username = self.slug = first_part
+    else
+      self.slug = self.username
     end
   end
 
