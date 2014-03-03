@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 before_action :set_post, only: [ :show, :edit, :update, :destroy]
+rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   def index
     @posts = Post.all
@@ -68,6 +69,10 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
 
   def set_post
     @post = Post.find_by_id params[:id]
+  end
+
+  def unauthorized_error
+    redirect_to posts_path, :alert => "You can't change this post!"
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
