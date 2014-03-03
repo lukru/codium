@@ -10,8 +10,6 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
   end
 
   def show
-    @posts = Post.all
-    @post = Post.first
   end
 
   def create
