@@ -23,18 +23,18 @@ feature "jobs management" do
       fill_in "Name", :with => "ruby dev"
       click_button "Create a Job"
 
-      expect(page).to have_text("Successfully created job")
+      expect(page).to have_text("Successfully created Job")
     end
 
     scenario "list all project" do
       Job.create(name: 'ruby dev')
       Job.create(name: 'rails dev')
 
-      visit projects_path
+      visit jobs_path
 
       expect(page).to have_text("ruby dev")
       expect(page).to have_text("rails dev")
-      expect(page).to have_link("Add a job")
+      expect(page).to have_link("Add a Job")
     end
   end
 
@@ -44,7 +44,7 @@ feature "jobs management" do
       Job.create(name: 'ruby dev')
       Job.create(name: 'rails dev')
 
-      visit projects_path
+      visit jobs_path
 
       expect(page).to have_text("ruby dev")
       expect(page).to have_text("rails dev")
