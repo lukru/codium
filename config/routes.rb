@@ -35,4 +35,6 @@ Codium::Application.routes.draw do
   get '/about', to: 'pages#about'
 
   root :to => 'pages#home'
+
+  get '/team' => 'pages#team'
 end
