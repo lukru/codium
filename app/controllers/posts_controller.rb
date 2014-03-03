@@ -21,9 +21,9 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
     respond_to do |format|
       if @post.save
         @post.published == true ? notice = 'published' : notice = 'saved as draft'
-        format.html { redirect_to new_post_path, notice: 'Post was successfully ' + notice}
+        format.html { redirect_to posts_path, notice: 'Post was successfully ' + notice}
       else
-        format.html { render action: 'new', notice: 'Error: cannot able to save the new post'}
+        format.html { render action: 'new', notice: 'Error: Not able to save the new post'}
       end
     end
   end
