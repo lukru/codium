@@ -24,11 +24,16 @@ class User < ActiveRecord::Base
   #end
 
 
+  def is_owner?(current_user)
+    current_user && current_user.id == self.id
+  end
+
   # Friendly Id
   extend FriendlyId
   friendly_id :username, use: :slugged
 
   before_save :set_username_and_slug
+
 
   private
   def set_username_and_slug
@@ -42,7 +47,7 @@ class User < ActiveRecord::Base
         end
       end.join('')
 
-      self.display_name = self.slug = first_part
+      self.username = self.slug = first_part
     end
   end
 

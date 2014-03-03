@@ -2,12 +2,15 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, except: [:profile]
 
   before_action :set_user, only: [:show]
-
-  def show
-  end
+  before_action :set_current_user, only: [:profile]
+  before_action :set_title, only: [:show, :profile]
 
   def profile
-    @user = current_user
+    render :'users/show'
+  end
+
+  def show
+
   end
 
   private
@@ -17,5 +20,13 @@ class UsersController < ApplicationController
       flash[:error] = "That user doesn't exits"
       redirect_to '/'
     end
+  end
+
+  def set_current_user
+    @user = current_user
+  end
+
+  def set_title
+    @title = @user.username
   end
 end
