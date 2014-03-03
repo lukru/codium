@@ -25,7 +25,7 @@ feature "page management" do
     user.provider = 'github'
     user.save
 
-    visit '/about'
+    visit '/team'
 
     expect(page).to have_text('Meet our team')
     expect(page).to have_link("epoch", :href=>"/users/epoch")
