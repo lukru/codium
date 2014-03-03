@@ -13,7 +13,7 @@ class JobsController < ApplicationController
   	@job = current_user.jobs.new(job_params)
 
   	if @job.save
-  		redirect_to jobs_path, notice: 'Succesfully created Job'
+  		redirect_to jobs_path, notice: 'Successfully created Job'
   	else
   		render :new
   	end

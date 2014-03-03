@@ -11,5 +11,5 @@
 <% end %>
 
 <% if current_user %>
-	<p><%= link_to 'Add a Job', user_jobs_new_path(current_user), class:'btn btn-default' %></p>
+	<p><%= link_to 'Add a Job', new_user_job_path(current_user), class:'btn btn-default' %></p>
 <% end %>
