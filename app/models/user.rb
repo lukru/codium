@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :recommendations
   has_many :comments
   has_many :memberships
+
+  has_many :users_skills, :dependent => :destroy # not need to preserve if user deleted
+  has_many :skills, :through => :users_skills
+
   has_many :projects, :through => :memberships
 
   # TODO validation
