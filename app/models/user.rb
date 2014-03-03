@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
 
   include ActiveRecordHelpers
 
-  has_many :posts
   has_many :recommendations
   has_many :comments
   has_many :memberships
   has_many :projects, :through => :memberships
+  has_many :post_members
+  has_many :posts, :through => :post_members
   has_many :jobs
 
   validates_format_of :username, :with => /\A[A-Za-z0-9]+\Z/

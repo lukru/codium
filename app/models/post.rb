@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  belongs_to :user
+  has_many :post_members
+  has_many :users, :through => :post_members
 
 
   def word_count
