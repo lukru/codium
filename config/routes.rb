@@ -9,6 +9,7 @@ Codium::Application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'me/profile' => 'users#profile'
 
+  resources :projects
 
   resources :posts
 

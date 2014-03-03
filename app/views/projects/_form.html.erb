@@ -1,0 +1,13 @@
+<%= form_for(@project,html: {:role => 'form', :class => 'form'}) do |f| %>
+
+  
+  <div>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, :placehodler => 'name', required: true %>
+  </div>
+
+  <div>
+     <%= f.submit "Create" %>
+  </div>
+
+<% end %>
