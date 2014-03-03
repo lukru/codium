@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :memberships
   has_many :projects, :through => :memberships
+  has_many :jobs
 
   # TODO validation
   #validates :given_name, :family_name,
