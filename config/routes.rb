@@ -16,7 +16,7 @@ Codium::Application.routes.draw do
   get 'me/profile' => 'users#profile'
 
   resources :projects
-
+  resources :memberships
   resources :posts
 
   get '/me/drafts', to: 'posts#draft_posts'  

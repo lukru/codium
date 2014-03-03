@@ -1,3 +1,31 @@
+<%if @project.id.present? %>
+    <button id="show">add member</button>
+    <dialog id="window" class="userlists"> 
+    <span class="exit">X</span>
+    <ul>
+      <% @users.each do |user| %>
+        <li><%= user.email %> 
+
+        <% if @project.members.include? user %>
+          <span>already member </span>
+        <% else %>
+
+        <%= form_for @membership do |f| %>
+          <%= f.hidden_field :project_id, value: @project.id  %>
+          <%= f.hidden_field :member_id, value: user.id  %>
+          <%= f.submit "add as member" %>
+        <% end %>
+
+        <% end %>
+        </li>
+      <% end %>
+
+    </ul>
+    </dialog>
+  
+  <% end %>
+
+
 <%= form_for(@project,html: {:role => 'form', :class => 'form'}) do |f| %>
 
   
@@ -5,9 +33,28 @@
     <%= f.label :name, 'Name' %>
     <%= f.text_field :name, :placehodler => 'name', required: true %>
   </div>
+  
+  
+
 
   <div>
      <%= f.submit "Create" %>
   </div>
 
 <% end %>
+
+
+<script>
+  
+  $("#window").hide();
+
+  $("#show").on("click", function(e){
+      e.preventDefault();
+      $("#window").fadeToggle(400);
+  });
+
+  $(".exit").on("click",function() {
+    $("#window").fadeToggle(400);
+  })
+
+</script>
