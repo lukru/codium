@@ -6,7 +6,7 @@
 
 <h4>members</h4>
 <% @project.members.each do |member| %>
-  <p><%= member.email %></p>
+  <p><%= member.username %></p>
 <% end %>
 
 <%= link_to "back", projects_path  %>
