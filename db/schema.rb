@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140318032533) do
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "memberships", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "member_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
