@@ -28,6 +28,12 @@ class User < ActiveRecord::Base
   #  uid && provider
   #end
 
+  # Image Upload functionality
+  has_attached_file :image
+  validates_attachment :image, 
+                :content_type => { :content_type => ['image/jpeg', 'image/png'] },
+                :size => { :less_than => 1.megabyte }
+
 
   def is_owner?(current_user)
     current_user && current_user.id == self.id
