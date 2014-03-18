@@ -1,4 +1,7 @@
 <h1><%= @project.name %></h1>
+<div>
+  <%= image_for_project(@project) %>
+</div>
 
 <% if @project.members.include? current_user %>
   <%= link_to "Edit", edit_project_path(@project) %>
