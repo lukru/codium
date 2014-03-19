@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
     minute = (word_count/250).round(1)
   end
   acts_as_taggable # Alias for acts_as_taggable_on :tags
-  acts_as_taggable_on :topic
+  acts_as_taggable_on :tag
   has_many :recommendations
 
   has_many :comments
