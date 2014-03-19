@@ -24,7 +24,7 @@ Codium::Application.routes.draw do
     resources :jobs
   end
 
-
+  post 'users/createstudent' => 'users#createstudent'
   get 'users/:id' => 'users#show'
   get 'me/profile' => 'users#profile'
 
