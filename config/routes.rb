@@ -18,11 +18,9 @@ Codium::Application.routes.draw do
 
 
 
-  resources :users do
-    # get '/jobs/new' => 'jobs#new'
-    # post 'jobs' => 'jobs#create'
-    resources :jobs
-  end
+  resources :users
+
+  get 'jobs', to: 'jobs#index'
 
 
   get 'users/:id' => 'users#show'
