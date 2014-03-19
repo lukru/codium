@@ -9,6 +9,7 @@ feature "page management" do
     let(:user) do
       user = User.new(email: 'test@test.com')
       user.password = user.password_confirmation = 'password'
+      user.username = 'epoch'
       user.save
       user
     end
@@ -48,7 +49,7 @@ feature "page management" do
     scenario "view post" do
       post = Post.create(title: "first post")
 
-      visit post_path(post)
+      visit root_path
       expect(page).to have_text('first post')
     end
 
