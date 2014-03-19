@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :memberships
   has_many :projects, :through => :memberships
+  has_many :jobs
 
   validates_format_of :username, :with => /\A[A-Za-z0-9]+\Z/
 
@@ -24,6 +25,12 @@ class User < ActiveRecord::Base
   #def omniauth?
   #  uid && provider
   #end
+
+  # Image Upload functionality
+  has_attached_file :image
+  validates_attachment :image, 
+                :content_type => { :content_type => ['image/jpeg', 'image/png'] },
+                :size => { :less_than => 1.megabyte }
 
 
   def is_owner?(current_user)
