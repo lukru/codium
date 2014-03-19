@@ -40,10 +40,14 @@ Codium::Application.routes.draw do
 
   resources :posts
 
-  get '/me/drafts', to: 'posts#draft_posts'  
+  get '/me/drafts', to: 'posts#draft_posts'
   get '/about', to: 'pages#about'
+  get '/team' => 'pages#team'
 
   root :to => 'pages#home'
 
-  get '/team' => 'pages#team'
+  # a catch-all for new pages so they always have a route... so we don't have to make one every time!
+  # EG, get :blogfeed => 'pages#:blogfeed'
+  # OR  get :hamburger => 'pages#:hamburger'
+  get ':action' => 'pages#:action'
 end
