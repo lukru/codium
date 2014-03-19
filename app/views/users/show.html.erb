@@ -1,14 +1,21 @@
-<h1><%= @title %></h1>
-Email: <%= @user.email %> <br>
-Display Name: <%= @user.username %> <br>
-Given Name: <%= @user.given_name %> <br>
-Family Name: <%= @user.family_name %> <br>
-Tagline: <%= @user.tagline %> <br>
-Bio: <%= @user.bio %> <br>
-Permanent Link: <%= user_url(@user) %> <br>
-<div class="form-group">
-    <div>
-      <%= image_for_user(@user) %>
+<div class="container-fluid">
+  <div class="row clearfix">
+    <div class="wrapper clearfix">
+      <div class ="studentinfo">
+        <div class="col-md-8 clearfix">
+            <h1>Student Name</h1>
+            <p>Bio description goes here. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="proj1">
+          </div>
+          <div class="proj2">
+          </div>
+          <div class="proj3">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<%= link_to 'edit', edit_user_registration_path(@user) if @user.is_owner?(current_user) %>
+</div>

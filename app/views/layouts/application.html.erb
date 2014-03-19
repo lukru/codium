@@ -17,21 +17,13 @@
     <p class="error"><%= flash[:error] %></p>
   <% end %>
 
-<nav>
-  <%= render 'shared/newstory' %>
-</nav>
 
-<div class="logo-header">
-  <%= render 'shared/header' %>
-</div>
+
+
 
   
-<div class="content clearfix">
   <%= yield %>
-</div>
 
-<footer class="clearfix">
-  <%= render 'shared/footer' %>
-</footer>
+
 </body>
 </html>
