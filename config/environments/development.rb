@@ -28,4 +28,8 @@ Codium::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # converts user generated tags to lowercase and will save tags parameterized
+  ActsAsTaggableOn.force_lowercase = true
+  # ActsAsTaggableOn.force_parameterize = true
 end

@@ -15,6 +15,8 @@ rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
   end
 
   def create
+    # tags = params[:post][:tag_list]
+    # tags
     params[:commit] == 'Publish' ? published = true : published = false
     params[:post][:published] = published
     @post = current_user.posts.new(post_params)
@@ -77,7 +79,7 @@ rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :subtitle, :body, :published)
+    params.require(:post).permit(:title, :subtitle, :tag_list, :body, :published)
   end
 
 end

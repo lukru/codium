@@ -56,6 +56,10 @@ gem 'aws-sdk'
 # helps parse RSS from blog feeds in a nicer way
 gem "simple-rss"
 
+# will allow users to tag posts
+gem 'acts-as-taggable-on'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
