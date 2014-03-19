@@ -1,14 +1,106 @@
-<% @posts.each do |post| %>
-  <div class="post_title">
-    <%=link_to post.title, post_path(post) %>
-  </div>
-  <div class="post_subtitle">
-    <%= post.subtitle %>
-    <p>
-      <%= post.created_at %>
-    </p>
-  </div>
-<% end %>
+<div class="slide" id="slide1" data-stellar-background-ratio="0.5">
+
+	<div class="wrapper" data-stellar-ratio="2">
+
+		<div id="heading">	
+			<h1>WDI Sydney 2014</h1>
+		</div> 
+
+	</div>
+	
+
+</div><!--End Slide 1-->
+
+<nav id='affix'>
+	<ul>
+		<li><a href="#intro">Intro</a></li>
+		<li><a href="#skills">Skills</a></li>
+		<li><a href="#interests">Projects</a></li>
+	</ul>
+</nav>
+
+<script>
+	$(document).ready(function(){
+		var $affixTop = $('#affix');
+		var $imageHeight = $('#slide1').height();
+
+		$(window).on('scroll', function(){
+			if (this.scrollY >= $imageHeight) {
+				$affixTop.slideDown(200);
+			}
+			if (this.scrollY <= $imageHeight) {
+				$affixTop.hide();
+			}	
+		});
+	});
+</script>
+
+<script>
+	$(document).ready(function(){
+		$('html, body').animate({ scrollTop: 0 }, 'slow');
+	});
+</script>
+
+<style>
+	#affix { display: none; position: fixed; top: 0;}
+</style>
 
 
-<!-- posts, projects and header etc, sign in link -->
+<div class="slide" id="slide2" data-stellar-background-ratio="0">
+	<div class="wrapper" data-stellar-ratio="1"> 
+		<div id="stack" class="container-fluid">
+			<h2>The Stack</h2>
+			<div class="row">
+				<div class="skillbox col-sm-3 box-1"><%= image_tag('htmlcss-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-2"><%= image_tag('js-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-3"><%= image_tag('ruby-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-4"><%= image_tag('json-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-5"><%= image_tag('github-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-6"><%= image_tag('jquery-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-7"><%= image_tag('compsci-icon.png') %></div>
+				<div class="skillbox col-sm-3 box-8"><%= image_tag('tdd-icon.png') %></div>
+			</div>
+
+		</div>
+	</div>
+
+</div><!--End Slide 2-->
+
+
+<div class="slide" id="slide3" data-stellar-background-ratio="0.5">
+	<div class="wrapper" data-stellar-ratio="2"> 
+		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, iste, odio necessitatibus pariatur a consequatur enim commodi ex impedit nam dolorum cum quisquam eaque quaerat aspernatur dolor repellat. Ex, natus.</h2>
+	</div>
+
+</div><!--End Slide 3-->
+
+<div class="slide" id="slide4" data-stellar-background-ratio="0">
+	
+	<div  class="wrapper clearfix">
+		<div id="home-section4" class="container-fluid clearfix">
+		<h2>Students and Staff</h2>
+			<div class="row clearfix">
+				<div class="col-sm-4 students">
+					<h2>Students</h2>
+					<p><%= link_to 'View all students', students_path %></p>
+				</div>
+				<div class="col-sm-4 teachers">
+					<h2>Daniel Tsui</h2>
+				</div>
+				<div class="col-sm-4 teachers">
+					<h2>Taryn East</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+</div><!--End Slide 4-->
+
+
+
+
+
+
+

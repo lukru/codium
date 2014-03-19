@@ -1,3 +1,201 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+$colors: #16a085, #e67e22, #2980b9, #7f8c8d, #c0392b, #f1c40f, #9b59b6, #34495e, #3498db, #9b59b6;
+$i: 0;
+@each $color in $colors { 
+	.box-#{$i} {
+		background-color: $color;
+	}
+	$i: $i+1;
+}
+
+h2 { 
+	font-size: 40px;
+	text-transform: uppercase;
+	text-align:center;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin-top: 0;
+	padding: 0;
+}
+
+.slide {
+	background-attachment: fixed;
+	width:100%;
+	height:100%;
+	position: relative;
+}
+
+.wrapper{
+	width:960px;
+	height:100%;
+	margin:0 auto;
+	position:relative;
+}
+.slideno{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	font-size:100px;
+	font-weight:bold;
+	color:rgba(255,255,255,0.3);
+}
+
+
+.skillbox {
+	height: 180px;
+	border: 1px solid white;
+}
+
+
+/******************************
+NAV STYLES 
+*******************************/
+
+#affix {
+	z-index: 2;
+}
+
+nav {
+	padding: 10px 0 10px 0;
+	border-top:	1px solid #cdcdcd;
+	border-bottom:	1px solid #cdcdcd;
+	background-color: rgba(255,255,255,0.7);
+	-webkit-box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	-moz-box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	width: 100%;
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	font-size: 1.1em;
+}
+
+nav li a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: red;
+}
+
+
+/******************************
+SLIDE 1 
+*******************************/
+#slide1{
+	background: image-url('sydney.jpg');
+	background-repeat: no-repeat;  
+	background-size: cover;
+	height:100%;
+}
+
+h1 {
+	margin: 0;
+	font-size: 60px;
+	text-transform: uppercase;
+	color: white;
+	text-align:center;
+	position:fixed;  
+	top:50%;  
+	left:50%;  
+	width:500px;  
+	margin-top:-41px;  
+	margin-left:-223px;  
+	z-index:1;
+}
+
+/******************************
+SLIDE 2 
+*******************************/
+#slide2{
+	background-color:#45B29D  ;
+	height: 90%;  
+}
+
+#stack {
+	margin-top: 10%;
+
+	
+
+	.skillbox img {
+		margin:22%;
+	}
+
+}
+
+/******************************
+SLIDE 3 
+*******************************/
+#slide3{
+	background-image: image-url('somewdihumans.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;  
+
+	h2 {
+		font-size: 40px;
+		text-transform: uppercase;
+		color: white;
+		text-align:center;
+	}
+}
+
+/******************************
+SLIDE 4 
+*******************************/
+
+#slide4{
+	background: #333;	
+	color:white;
+
+	// @extend .h2;
+	// color: white;
+
+	.wrapper {
+		width: 80%;
+	}
+
+	.row > div:first-of-type{
+		border-right: 1px solid white;
+	}
+
+	.row > div:last-of-type {
+		border-left: 1px solid white;
+	}
+
+	.students,.teachers {
+		height: 300px;
+	}
+
+}
+
+
+#home-section4{
+	padding-top:20%;
+}
+
+
+// #slide4 .parallaxbg {
+// position:absolute;
+// font-size:28px;
+// color:rgba(51,51,51,0.3);
+// }
+
+

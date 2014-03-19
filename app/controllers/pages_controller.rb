@@ -6,4 +6,6 @@ class PagesController < ApplicationController
   end
   def about
   end
+  def students
+  end
 end
