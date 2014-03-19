@@ -1,3 +1,6 @@
+require 'simple-rss'
+require 'open-uri'
+
 class PagesController < ApplicationController
     skip_before_action :authenticate_user!, :except => [:index]
 
@@ -13,7 +16,18 @@ class PagesController < ApplicationController
   end
 
   def blogfeed
-    @url = 'http://sampeters.net/blog/feed/'
+
+    @urls = User.pluck(:rss).compact
+    @feed_items = []
+    @urls.each do |url|
+      begin
+        feed = SimpleRSS.parse open(url)
+        @feed_items << feed.items.first
+      rescue OpenURI::HTTPError => e
+        logger.info("Failed to connect to a URL for #{url}")
+      end
+    end
+    @feed_items.sort_by{ |item| item[:pubDate]}
   end
 
 end

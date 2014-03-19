@@ -56,6 +56,12 @@
       <%= image_for_user(@user) %>
     </div>
   </div>
+    <div class="form-group">
+      <div>
+        <%= f.label 'Blog RSS Feed URL', :rss %> <br/>
+        <%= f.file_field :rss %>
+      </div>
+    </div>
 
   <div><%= f.submit "Update" %></div>
 <% end %>

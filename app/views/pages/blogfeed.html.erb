@@ -1,13 +1,8 @@
 <h1>What are we blogging about?</h1>
 <p>Posts below</p>
 
-<% require 'rss' %>
-<% require 'open-uri' %>
 
-    <% open(@url) do |rss| %>
-        <% feed = RSS::Parser.parse(rss) %>
-        <h2><%= feed.channel.title %></h2>
-        <% feed.items.each do |item| %>
-        <h4><%= item.title %></h4>
-    <% end %>
+<% @feed_items.each do |item| %>
+    <h4><%= raw item[:title] %> by <%= item[:dc_creator] %></h4>
+    <p><%= raw item[:description] %></p>
 <% end %>
