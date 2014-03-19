@@ -20,17 +20,23 @@ describe PagesController do
       it 'load the page' do
         response.should be_success
       end
-      it 'should still get page if user is logged in or out' do
-        true.should == false
-      end
-      it 'return a nice error if every url attached fails' do
-        true.should == false
-      end
+
+      #it 'Load if youre logged in' do
+      #  sign_in nil
+      #  get :blogfeed
+      #  response.should be_success
+      #end
+      #it 'load if youre a guest' do
+      #  sign_in
+      #  get :blogfeed
+      #  response.should be_success
+      #end
+
     end #loading blogfeed page
 
     context 'loading posts' do
       it 'all have valid urls' do
-        true.should == false
+        assigns(:url).should_not be_nil
       end
       it 'connect to at least one url' do
         true.should == false

@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
 
   def blogfeed
-
+    @url = 'http://sampeters.net/blog/feed/'
   end
 
 end
