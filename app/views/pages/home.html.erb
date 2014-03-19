@@ -11,13 +11,7 @@
 
 </div><!--End Slide 1-->
 
-<nav id='affix'>
-	<ul>
-		<li><a href="#intro">Intro</a></li>
-		<li><a href="#skills">Skills</a></li>
-		<li><a href="#interests">Projects</a></li>
-	</ul>
-</nav>
+<%= render 'shared/nav' %>
 
 <script>
 	$(document).ready(function(){
@@ -51,14 +45,65 @@
 		<div id="stack" class="container-fluid">
 			<h2>The Stack</h2>
 			<div class="row">
-				<div class="skillbox col-sm-3 box-1"><%= image_tag('htmlcss-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-2"><%= image_tag('js-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-3"><%= image_tag('ruby-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-4"><%= image_tag('json-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-5"><%= image_tag('github-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-6"><%= image_tag('jquery-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-7"><%= image_tag('compsci-icon.png') %></div>
-				<div class="skillbox col-sm-3 box-8"><%= image_tag('tdd-icon.png') %></div>
+				
+				<div class="skillbox col-sm-3 box-1">
+				<p><%= image_tag('ruby.svg') %></p>
+					<div class="info">
+						<h3>HTML/CSS/Sass</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, praesentium dignissimos cumque ipsa dolore et delectus ducimus illum mollitia? </p>
+					</div>
+
+				</div>
+				<div class="skillbox col-sm-3 box-2">
+					<%= image_tag('js-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-3">
+					<%= image_tag('ruby.svg') %>
+
+					<div class="info">
+						<h3>Ruby</h3>
+						<p>Something about Ruby</p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-4">
+					<%= image_tag('json-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-5">
+					<%= image_tag('github-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-6">
+					<%= image_tag('jquery-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-7">
+					<%= image_tag('compsci-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="skillbox col-sm-3 box-8">
+					<%= image_tag('tdd-icon.png') %>
+					<div class="info">
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -78,11 +123,11 @@
 	
 	<div  class="wrapper clearfix">
 		<div id="home-section4" class="container-fluid clearfix">
-		<h2>Students and Staff</h2>
+			<h2>Students and Staff</h2>
 			<div class="row clearfix">
 				<div class="col-sm-4 students">
 					<h2>Students</h2>
-					<p><%= link_to 'View all students', students_path %></p>
+					<p><%= link_to 'View all students', users_path %></p>
 				</div>
 				<div class="col-sm-4 teachers">
 					<h2>Daniel Tsui</h2>
@@ -97,6 +142,23 @@
 
 
 </div><!--End Slide 4-->
+
+
+
+<script>
+	$(".skillbox").mouseenter(function() {
+		$(this).children('.info').first().animate({marginTop: '-=190px'}, 500);
+		$(this).addClass('img-grey');
+		$(this).removeClass('img-color');
+		console.log('mouseenter');
+	});
+	$(".skillbox").mouseleave(function() {
+		$(this).children('.info').first().animate({marginTop: '+=190px'}, 500);
+		$(this).removeClass('img-grey');
+		$(this).addClass('img-color');
+		console.log('mouseleave');
+	});
+</script>
 
 
 

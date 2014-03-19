@@ -12,6 +12,56 @@ $i: 0;
 	$i: $i+1;
 }
 
+$students: nick emily ed lauren alberto marcus fede lukes lukem pranava sam;
+
+@each $student in $students {
+	#student-#{$student} {
+		background: image-url('#{$student}.png');
+		background-repeat: no-repeat; 
+		background-size:cover;
+		-webkit-filter: grayscale(1);
+		transition: 1s;
+
+		&:hover {
+			-webkit-filter: grayscale(0);
+			transition: 1s;
+		}		
+	}
+}
+
+/******************************
+STUDENT PAGE STYLES 
+*******************************/
+
+.students-container {
+
+
+	.student-image {
+		height: 300px;
+		position: relative;
+		padding: 0;
+		
+		.name {
+			position:relative;
+		}
+
+		.title {
+			position: relative;
+		}
+
+		.place {
+			background-color: rgba(255,255,255,0.5);
+			position:absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 0;
+		}
+
+	}
+
+}
+
+
 h2 { 
 	font-size: 40px;
 	text-transform: uppercase;
@@ -40,7 +90,7 @@ html, body {
 }
 
 .wrapper{
-	width:960px;
+	width:80%;
 	height:100%;
 	margin:0 auto;
 	position:relative;
@@ -56,8 +106,49 @@ html, body {
 
 
 .skillbox {
-	height: 180px;
-	border: 1px solid white;
+	height: 250px;
+	border: 10px solid white;
+	overflow: hidden;
+	p {
+		text-align: center;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.info {
+	// margin-top: 300px;
+    position: absolute;
+    z-index: 2;
+    color: black;
+    margin-right: 10px;
+
+    h3 {
+
+    }
+}
+
+
+
+.img-grey {
+	transition: 1s;
+	img {
+		-webkit-filter: blur(2px);
+	}
+
+	p {
+		font-size: 0.9em;
+		line-height: 1.2em;
+		font-weight: normal;
+		color: black;
+		margin: 0;
+	}
+
+	background-color: rgba(255,255,255,0.9);
+}
+
+.img-color {
+	transition: 1s;
 }
 
 
@@ -135,7 +226,7 @@ SLIDE 2
 	
 
 	.skillbox img {
-		margin:22%;
+		margin-top:70px;
 	}
 
 }

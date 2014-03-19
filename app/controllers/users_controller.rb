@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, except: [:profile]
+  skip_before_action :authenticate_user! #, except: [:profile, :index]
 
   before_action :set_user, only: [:show]
   before_action :set_current_user, only: [:profile]
   before_action :set_title, only: [:show, :profile]
+  def index
+  end
 
   def profile
     render :'users/show'
