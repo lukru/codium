@@ -1,9 +1,11 @@
-<h1>What are we blogging about?</h1>
-<p>The latest posts from our students</p>
+<%= render 'shared/nav' %>
 
-    <% @allitems.each do |item| %>
-        <h4>By <%= item[:dc_creator] %> on <%= item[:channel] %></h4>
-        <h5><%= raw item[:title] %></h5>
-        <h6>Posted <%= item[:pubDate].strftime("%b %d %Y %I:%m%p") %></h6>
-        <p><%= raw item[:description] %></p>
-    <% end %>
+<div class="container-fluid">
+  <% @allitems.each do |item| %>
+      <h4>By <%= item[:dc_creator] %> on <%= item[:channel] %></h4>
+      <h5><%= raw item[:title] %></h5>
+      <h6>Posted <%= item[:pubDate].strftime("%b %d %Y %I:%m%p") %></h6>
+      <p><%= raw item[:description] %></p>
+  <% end %>
+</div>
+
