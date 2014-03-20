@@ -16,22 +16,20 @@ class PagesController < ApplicationController
   end
 
   def blogfeed
-
     @urls = User.pluck(:rss).compact
     @allitems = []
-    @urls.each do |url|
-      begin
-        feed = SimpleRSS.parse open(url)
-          @channel = feed.channel.title
-          feed.items.each do |thing|
-            thing[:channel] = @channel
-            @allitems << thing
-          end
-
-      rescue OpenURI::HTTPError => e
-        logger.info("Failed to connect to a URL for #{url}")
+      @urls.each do |url|
+        begin
+          feed = SimpleRSS.parse open(url)
+            @channel = feed.channel.title
+            feed.items.each do |thing|
+              thing[:channel] = @channel
+              @allitems << thing
+            end
+        rescue OpenURI::HTTPError => e
+          logger.info("Failed to connect to a URL for #{url}")
+        end
       end
-    end
     @allitems.sort_by!{ |item| item[:pubDate]}.reverse!
   end
 
