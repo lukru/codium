@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140319051054) do
-=======
 ActiveRecord::Schema.define(version: 20140320053433) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,19 +132,16 @@ ActiveRecord::Schema.define(version: 20140320053433) do
     t.string   "tagline"
     t.string   "username"
     t.string   "slug"
-    t.string   "role"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_uploaded_at"
-<<<<<<< HEAD
     t.string   "rss"
-=======
+    t.string   "role"
     t.string   "twitter"
     t.string   "github"
     t.string   "linkedin"
     t.string   "website"
->>>>>>> master
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

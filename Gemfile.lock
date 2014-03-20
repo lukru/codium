@@ -219,11 +219,8 @@ DEPENDENCIES
   httparty
   jbuilder (~> 1.2)
   jquery-rails
-<<<<<<< HEAD
   mocha
-=======
   nokogiri
->>>>>>> master
   omniauth
   omniauth-github
   paperclip

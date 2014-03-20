@@ -2,8 +2,10 @@
 <p>The latest posts from our students</p>
 
 
-<% @feed_items.each do |item| %>
-    <h4>Most recent post by <%= item[:dc_creator] %> on <%= item[:pubDate].strftime("%b %d %Y %I:%m%p") %></h4>
+<% @allitems.each do |item| %>
+    <h4>By <%= item[:dc_creator] %> on <%= item[:channel] %></h4>
     <h5><%= raw item[:title] %></h5>
+    <h6>Posted <%= item[:pubDate].strftime("%b %d %Y %I:%m%p") %></h6>
     <p><%= raw item[:description] %></p>
 <% end %>
+
