@@ -11,7 +11,7 @@ class UserPolicy
         current_user.admin?
     end
 
-    def create?
+    def createstudent?
         current_user.admin?
     end
 
