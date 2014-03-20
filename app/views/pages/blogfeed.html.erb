@@ -3,6 +3,7 @@
 
 
 <% @feed_items.each do |item| %>
-    <h4><%= raw item[:title] %> by <%= item[:dc_creator] %></h4>
+    <h4>Most recent post by <%= item[:dc_creator] %> on <%= item[:pubDate].strftime("%b %d %Y %I:%m%p") %></h4>
+    <h5><%= raw item[:title] %></h5>
     <p><%= raw item[:description] %></p>
 <% end %>
