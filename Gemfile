@@ -60,6 +60,8 @@ gem "simple-rss"
 gem 'httparty'
 gem 'nokogiri'
 
+# gem to allow caching on actions
+gem 'actionpack-action_caching'
 
 # will allow users to tag posts
 gem 'acts-as-taggable-on'

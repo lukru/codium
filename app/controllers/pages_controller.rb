@@ -3,6 +3,7 @@ require 'open-uri'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, :except => [:index]
+  caches_action :blogfeed, :expires_in => 12.hours
 
   def home
     @posts = Post.all.limit(4)
@@ -17,20 +18,29 @@ class PagesController < ApplicationController
 
   def blogfeed
     @urls = User.pluck(:rss).compact
-    @allitems = []
-      @urls.each do |url|
-        begin
-          feed = SimpleRSS.parse open(url)
-            @channel = feed.channel.title
-            feed.items.each do |thing|
-              thing[:channel] = @channel
-              @allitems << thing
-            end
-        rescue OpenURI::HTTPError => e
-          logger.info("Failed to connect to a URL for #{url}")
+    @allitems = fetch_feed_items(@urls)
+  end
+
+
+  private #####################################################
+
+
+  def fetch_feed_items(urls)
+    items = []
+    urls.each do |url|
+      begin
+        feed = SimpleRSS.parse open(url)
+        channel = feed.channel.title
+        feed.items.each do |thing|
+          thing[:channel] = channel
+          items << thing
         end
+      rescue OpenURI::HTTPError => e
+        logger.info("Failed to connect to a URL for #{url}")
       end
-    @allitems.sort_by!{ |item| item[:pubDate]}.reverse!
+    end
+    #items.sort_by!{ |item| item[:pubDate] }.reverse!
+    items
   end
 
 end
