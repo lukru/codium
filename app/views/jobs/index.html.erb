@@ -1,7 +1,15 @@
-<% @jobs.each do |job| %>
-  <p><%= link_to job['jobtitle'], job['url'], target: '_blank' %></p>
-<% end %>
-<%= will_paginate @paginator %>
+<div class="page-contentù">
+  <h2>Job Listing</h2>
+  <% @jobs.each do |job| %>
+    <div class="job">
+      <h3 class="job-company"><%= link_to job['company'], job['url'], target: '_blank' %></h3>
+      <p class="job-title"><strong><%= job['jobtitle'] %></strong></p>
+      <p class="job-snippet"><%= job['snippet'] %></p>
+    </div>
+  <% end %>
+  <div class="center-text"><%= will_paginate @paginator, renderer: BootstrapPagination::Rails %></div>
+</div>
+
 
 
 

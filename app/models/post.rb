@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :post_members
+  has_many :users, :through => :post_members
 
 
   def word_count
@@ -14,6 +16,7 @@ class Post < ActiveRecord::Base
   has_many :recommendations
 
   has_many :comments
+  
   validates :title, presence: true
 
 
