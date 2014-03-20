@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :memberships, foreign_key: "member_id"
   has_many :projects, :through => :memberships
+  has_many :post_members
+  has_many :posts, :through => :post_members
   has_many :jobs
 
   validates_format_of :username, :with => /\A[A-Za-z0-9]+\Z/
@@ -26,12 +28,16 @@ class User < ActiveRecord::Base
   #  uid && provider
   #end
 
+
   # Image Upload functionality
   has_attached_file :image
   validates_attachment :image, 
                 :content_type => { :content_type => ['image/jpeg', 'image/png'] },
                 :size => { :less_than => 1.megabyte }
 
+  def admin?
+    self.role == "admin"
+  end
 
   def is_owner?(current_user)
     current_user && current_user.id == self.id

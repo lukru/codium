@@ -12,7 +12,7 @@ describe Post do
     context 'when word count is less than 250' do
       it "returns 1" do
         post = Post.new(title: "my first post", body: "a few words")
-        expect(post.reading_time).to eq 1      
+        expect(post.reading_time).to eq 0      
       end
     end
 

@@ -50,6 +50,9 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'aws-sdk'
 
+gem 'httparty'
+gem 'nokogiri'
+
 # will allow users to tag posts
 gem 'acts-as-taggable-on'
 
@@ -64,3 +67,7 @@ gem 'acts-as-taggable-on'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Pagination
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'

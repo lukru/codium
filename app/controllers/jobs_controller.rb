@@ -1,53 +1,18 @@
 class JobsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_job, only: [ :show, :edit, :update, :destroy]
-
 
   def index
-  	@jobs = Job.all
-  end
+    job = Job.new
 
-  def new
-  	@job = current_user.jobs.new
-  end
+    page = (params[:page] || 1).to_i
+    per_page = 10
 
-  def create
-  	@job = current_user.jobs.new(job_params)
+  	response = job.jobs(page, per_page)
+    @total_count = response['totalresults'].to_i
 
-  	if @job.save
-  		redirect_to jobs_path, notice: 'Successfully created Job'
-  	else
-  		render :new
-  	end
-  end
+    puts response['results']['result'].inspect
 
-  def show
-  end
-
-  def edit
-  	
-  end
-
-  def update
-  	if @job.update(job_params)
-  		redirect_to user_job_path(current_user,@job), notice:'Successfully updated Job'
-  	else
-  		render :edit
-  	end
-  end
-
-  def destroy
-  	@job.destroy
-  	redirect_to jobs_path
-  end
-
-  private
-
-  def set_job
-    @job = Job.find(params[:id])
-  end
-
-  def job_params
-  	params.require(:job).permit(:name, :location, :description,:deadline)
+    @jobs = response['results']['result']
+    @paginator = @jobs.paginate(page, per_page, @total_count)
+    @start = response['start'].to_i
   end
 end

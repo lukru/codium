@@ -11,11 +11,13 @@
   padding-top: 20px;
 }
 
-.studentinfo h1 {
+.studentinfo-title {
   font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  padding: 20px 0 0 0;
   margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .studentinfo h3 {

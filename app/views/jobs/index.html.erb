@@ -1,22 +1,16 @@
-<% if current_user %>
-	<p><%= link_to 'Add a Job', new_user_job_path(current_user), class:'btn btn-default' %></p>
-<% end %>
-
-<% @jobs.each do |job| %>
-	
-	<%= link_to user_job_path(current_user,job) do %>
-
-		<div id="job">
-			<h3><%= job.name %></h3>
-			<p><%= job.location %></p>
-			<p><%= job.deadline %></p>
-			<p class="button"><%= link_to 'Edit', edit_user_job_path(current_user,job), class:'btn btn-default' %></p>
-			<p class="button"><%= link_to 'Delete', user_job_path(current_user,job), class:'btn btn-default', method: 'delete' %></p>
-		</div>
-	
-	<% end %>
+<div class="page-contentù">
+  <h2>Job Listing</h2>
+  <% @jobs.each do |job| %>
+    <div class="job">
+      <h3 class="job-company"><%= link_to job['company'], job['url'], target: '_blank' %></h3>
+      <p class="job-title"><strong><%= job['jobtitle'] %></strong></p>
+      <p class="job-snippet"><%= job['snippet'] %></p>
+    </div>
+  <% end %>
+  <div class="center-text"><%= will_paginate @paginator, renderer: BootstrapPagination::Rails %></div>
+</div>
 
 
-<% end %>
+
 
 
