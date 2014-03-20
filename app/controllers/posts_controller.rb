@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 before_action :set_post, only: [ :show, :edit, :update, :destroy]
+rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   def index
     @posts = Post.all
@@ -10,12 +11,12 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
   end
 
   def show
-    @posts = Post.all
-    @post = Post.find(params[:id])
     @comments = @post.comments
   end
 
   def create
+    # tags = params[:post][:tag_list]
+    # tags
     params[:commit] == 'Publish' ? published = true : published = false
     params[:post][:published] = published
     @post = current_user.posts.new(post_params)
@@ -23,9 +24,9 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
     respond_to do |format|
       if @post.save
         @post.published == true ? notice = 'published' : notice = 'saved as draft'
-        format.html { redirect_to new_post_path, notice: 'Post was successfully ' + notice}
+        format.html { redirect_to posts_path, notice: 'Post was successfully ' + notice}
       else
-        format.html { render action: 'new', notice: 'Error: cannot able to save the new post'}
+        format.html { render action: 'new', notice: 'Error: Not able to save the new post'}
       end
     end
   end
@@ -72,9 +73,13 @@ before_action :set_post, only: [ :show, :edit, :update, :destroy]
     @post = Post.find_by_id params[:id]
   end
 
+  def unauthorized_error
+    redirect_to posts_path, :alert => "You can't change this post!"
+  end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :subtitle, :body, :published)
+    params.require(:post).permit(:title, :subtitle, :tag_list, :body, :published)
   end
 
 end

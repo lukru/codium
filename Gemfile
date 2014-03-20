@@ -47,6 +47,12 @@ end
 
 gem 'bootstrap-sass'
 
+gem 'paperclip'
+gem 'aws-sdk'
+
+# will allow users to tag posts
+gem 'acts-as-taggable-on'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

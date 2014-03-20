@@ -4,8 +4,12 @@ class PagesController < ApplicationController
   def home
     @posts = Post.all.limit(4)
   end
+
   def about
   end
-  def students
+
+  def team 
+  	@users = User.all
   end
+
 end

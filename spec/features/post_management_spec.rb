@@ -9,6 +9,7 @@ feature "page management" do
     let(:user) do
       user = User.new(email: 'test@test.com')
       user.password = user.password_confirmation = 'password'
+      user.username = 'epoch'
       user.save
       user
     end
