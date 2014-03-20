@@ -46,15 +46,26 @@
   
   <div>
     <%= f.label :name, 'Name' %>
-    <%= f.text_field :name, :placehodler => 'name', required: true %>
+    <%= f.text_field :name, :placeholder => 'name', required: true %>
   </div>
   
-  
+  <div>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_area :description, :placeholder => 'description', required: true %>
+  </div>
 
+  <div>
+    <%= f.label :url, 'URL' %>
+    <%= f.text_field :url, :placeholder => 'weblink' %>
+  </div>
 
   <div>
 	  <%= f.label :image %>
 	  <%= f.file_field :image %>
+
+    <% if @project.image? %>
+      <%= image_tag @project.image.url %>  
+    <% end %>
   </div>
 
   <div>

@@ -1,20 +1,38 @@
 <div class="container-fluid">
-  <div class="row clearfix">
-    <div class="wrapper clearfix">
-      <div class ="studentinfo">
-        <div class="col-md-8 clearfix">
-            <h1>Student Name</h1>
-            <p>Bio description goes here. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  <div class="wrapper clearfix">
+      <div class ="studentinfo clearfix">
+        <div class="row clearfix">
+          <div class="container-fluid">
+            <h1><%= @user.given_name %> <%= @user.family_name %></h1>
+            <h3>Subtitle</h3>            
+          </div>
         </div>
+
+        <div class="row studentinfo">
+          <div class="col-md-4 col-sm-6">
+            <%= image_for_user(@user) %>
+          </div>
         
-        <div class="col-md-4">
-          <div class="proj1">
-          </div>
-          <div class="proj2">
-          </div>
-          <div class="proj3">
+          <div class="col-md-8">
+            <p>Bio description goes here. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Blah blah blah. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+
+            <div class="social-links">
+              <i class="fa fa-linkedin-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-github-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-twitter-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-desktop" style="font-size:33px;"></i><br><br>
+            </div>
           </div>
         </div>
+
+        <div class="row projects clearfix">
+        <% @projects.each do |project| %>
+          <div class="proj col-md-4">
+           <%= image_tag project.image.url %>
+          </div>
+        <% end %>
+        </div>
+
       </div>
     </div>
   </div>
