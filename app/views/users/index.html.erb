@@ -5,6 +5,15 @@
 		<div class="col-sm-3">
 			<h2 class="name">WDI Students</h2>
 		</div>
+		<% @users.each do |user| %>
+		<div id="student" class="col-sm-3 student-image">
+			<%= image_for_user(user) %>
+			<div class="place"><h3 class="name"><%= user.name %></h3>
+			<p class="title"><%= user.tagline %></p>
+			</div>
+		</div>
+		<% end %>
+<!-- 
 		<div id="student-nick" class="col-sm-3 student-image">
 			<div class="place"><h3 class="name">Nick Morgan</h3>
 			<p class="title">Brocolli Enthusiast</p>
@@ -49,6 +58,6 @@
 		<div id="student-lukes" class="col-sm-3 student-image">
 			<h3 class="name">Luke Schoen</h3>
 			<p class="title"></p>
-		</div>
+		</div> -->
 	</div>
 </div>

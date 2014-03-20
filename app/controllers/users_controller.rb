@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :set_current_user, only: [:profile]
   before_action :set_title, only: [:show, :profile]
   def index
+    @users = User.all
   end
 
   def profile
