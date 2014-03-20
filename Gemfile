@@ -67,3 +67,4 @@ gem 'nokogiri'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
