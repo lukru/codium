@@ -50,6 +50,12 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'aws-sdk'
 
+gem 'httparty'
+gem 'nokogiri'
+
+# will allow users to tag posts
+gem 'acts-as-taggable-on'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -61,3 +67,6 @@ gem 'aws-sdk'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Pagination
+gem 'will_paginate', '~> 3.0'
