@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -11,3 +13,26 @@
  *= require_self
  *= require_tree .
  */
+
+
+footer {
+	background-color: #2ecc71;
+	height: 50px;
+}
+
+
+.login {
+	float: right;
+	margin-top: 3px;
+	margin-right: 40px;
+}
+
+@media (max-width: 530px) {
+	
+	.login {
+		float: left;
+		margin-left: 10px;
+		color: red;
+	}
+	
+}
