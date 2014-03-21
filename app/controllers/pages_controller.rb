@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   caches_action :blogfeed, :expires_in => 12.hours
 
   def home
+
     @posts = Post.all.limit(4)
   end
 
