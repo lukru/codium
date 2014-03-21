@@ -18,13 +18,14 @@
     <p class="alert"><%= alert %></p>
     <p class="error"><%= flash[:error] %></p>
     <% end %>
-
-    
-
-    <%= yield %>
   </div>
+
+
+  <%= yield %>
+
   <footer>
     <%= render 'shared/footer' %>
   </footer>
+
 </body>
 </html>
