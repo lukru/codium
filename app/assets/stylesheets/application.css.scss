@@ -43,6 +43,42 @@ footer {
 	float: right;
 	margin-top: 3px;
 	margin-right: 40px;
+
+	ul.sub-menu {
+    display:none;
+	}
+
+	li:hover ul.sub-menu {
+    display:block;
+    float: left;
+    	li {
+			display: block;
+    	}
+	}
+
+	.projects-dropdown {
+		margin-right: 100px;
+	}
+
+
+		
+	}
+
+
+.notices {
+	float: right;
+	margin-right: 70px;
+	margin-top: 3px;
+	
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+
+.clearfix {
+	height: 1px;
 }
 
 .page-content{
