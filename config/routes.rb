@@ -18,14 +18,16 @@ Codium::Application.routes.draw do
 
 
 
-  resources :users do
-    # get '/jobs/new' => 'jobs#new'
-    # post 'jobs' => 'jobs#create'
-    resources :jobs
-  end
+  resources :users
 
+  get 'jobs', to: 'jobs#index'
 
-  get 'users/:id' => 'users#show'
+  post '/users/createstudent' => 'users#createstudent'
+  post '/users/:username' => 'users#delete'
+
+  # get '/users/:username' => 'users#show' # , as: :user
+
+  # get 'users/:id' => 'users#show'
   get 'me/profile' => 'users#profile'
 
   resources :projects
@@ -35,15 +37,19 @@ Codium::Application.routes.draw do
 
   get 'me/profile' => 'users#profile', as: :my_profile
 
-  get 'users/:username' => 'users#show' #, as: :user
 
 
   get '/users' => 'users#index'
   resources :posts
-  get '/me/drafts', to: 'posts#draft_posts'  
+
+  get '/me/drafts', to: 'posts#draft_posts'
   get '/about', to: 'pages#about'
+  get '/team' => 'pages#team'
 
   root :to => 'pages#home'
 
-  get '/team' => 'pages#team'
+  # a catch-all for new pages so they always have a route... so we don't have to make one every time!
+  # EG, get :blogfeed => 'pages#:blogfeed'
+  # OR  get :hamburger => 'pages#:hamburger'
+  get ':action' => 'pages#:action'
 end

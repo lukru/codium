@@ -13,8 +13,11 @@ gem 'pry-rails'
 gem 'friendly_id'
 
 # for testing
-gem 'rspec-rails'
-gem 'capybara'
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'mocha'
+end
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -50,8 +53,19 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'aws-sdk'
 
+
+# helps parse RSS from blog feeds in a nicer way
+gem "simple-rss"
+
+gem 'httparty'
+gem 'nokogiri'
+
+# gem to allow caching on actions
+gem 'actionpack-action_caching'
+
 # will allow users to tag posts
 gem 'acts-as-taggable-on'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -64,3 +78,7 @@ gem 'acts-as-taggable-on'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Pagination
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'

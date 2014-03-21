@@ -1,14 +1,41 @@
-<h1><%= @title %></h1>
-Email: <%= @user.email %> <br>
-Display Name: <%= @user.username %> <br>
-Given Name: <%= @user.given_name %> <br>
-Family Name: <%= @user.family_name %> <br>
-Tagline: <%= @user.tagline %> <br>
-Bio: <%= @user.bio %> <br>
-Permanent Link: <%= user_url(@user) %> <br>
-<div class="form-group">
-    <div>
-      <%= image_for_user(@user) %>
+<header>
+<%#= render 'shared/nav' %>
+</header>
+
+<div class="container-fluid">
+  <div class="wrapper clearfix">
+      <div class ="studentinfo clearfix">
+        <div>
+            <h2 class="studentinfo-title"><%= @user.given_name %> <%= @user.family_name %></h2>
+            <h3>Subtitle</h3>            
+        </div>
+
+        <div class="row studentinfo">
+          <div class="col-md-4 col-sm-6">
+            <%= image_for_user(@user) %>
+          </div>
+        
+          <div class="col-md-8">
+            <p>Bio description goes here. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Blah blah blah. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+
+            <div class="social-links">
+              <i class="fa fa-linkedin-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-github-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-twitter-square" style="font-size:36px;"></i>&nbsp;
+              <i class="fa fa-desktop" style="font-size:33px;"></i><br><br>
+            </div>
+          </div>
+        </div>
+
+        <div class="row projects clearfix">
+        <% @projects.each do |project| %>
+          <div class="proj col-md-4">
+           <%= image_for_project(project) %>
+          </div>
+        <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
-<%= link_to 'edit', edit_user_registration_path(@user) if @user.is_owner?(current_user) %>
+</div>

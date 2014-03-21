@@ -10,12 +10,19 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>  
+
+<body>
+  <div id="wrap">
+    <%= render 'shared/nav' %>
+
 
   <%= yield %>
+
+  </div>
 
   <footer>
     <%= render 'shared/footer' %>
   </footer>
+
 </body>
 </html>
