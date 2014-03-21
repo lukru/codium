@@ -1,5 +1,5 @@
 <%if @project.id.present? %>
-    <button id="show">add member</button>
+    <p><strong>Add Member: </strong><button id="show" class="btn btn-default">add member</button></p>
     <dialog id="window" class="userlists"> 
     <span class="exit">X</span>
     <ul>
@@ -16,7 +16,7 @@
                             html:{ 
                               id:"remove_#{user.id}"
                               } do |f| %>
-              <%= f.submit "remove member", id: "remove" %>
+              <%= f.submit "remove member", id: "remove", :class => "btn btn-default" %>
               <% end %>
 
             <% end %>
@@ -29,7 +29,7 @@
                               } do |f| %>
                 <%= f.hidden_field :project_id, value: @project.id  %>
                 <%= f.hidden_field :member_id, value: user.id  %>
-                <%= f.submit "add as member", id: "add" %>
+                <%= f.submit "add as member", id: "add", :class => "btn btn-default" %>
               <% end %>
 
           </span>
@@ -54,11 +54,11 @@
 
   <div>
 	  <%= f.label :image %>
-	  <%= f.file_field :image %>
+    <%= f.file_field :image %>
   </div>
-
+  <p></p>
   <div>
-     <%= f.submit "Create" %>
+     <%= f.submit "Create", :class => "btn btn-default" %>
   </div>
 
 <% end %>

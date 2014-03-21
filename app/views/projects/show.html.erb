@@ -1,10 +1,12 @@
-<h1><%= @project.name %></h1>
+
+<div class="page-content">
+<h2><%= @project.name %></h2>
 <div>
   <%= image_for_project(@project) %>
 </div>
 
 <% if @project.members.include? current_user %>
-  <%= link_to "Edit", edit_project_path(@project) %>
+  <%= link_to "Edit", edit_project_path(@project), :class => "btn btn-default btn-sm" %>
 <% end %>
 
 
@@ -20,7 +22,7 @@
       html:{ 
         id:"remove_#{current_user.id}"
         } do |f| %>
-    <%= f.submit "remove member", id: "remove" %>
+    <%= f.submit "remove member", id: "remove", :class => "btn btn-default" %>
     <% end %>
   <% end %>
   <!-- if not member showing form to add to members -->
@@ -32,18 +34,19 @@
                   } do |f| %>
     <%= f.hidden_field :project_id, value: @project.id  %>
     <%= f.hidden_field :member_id, value: current_user.id  %>
-    <%= f.submit "add as member", id: "add" %>
+    <%= f.submit "add as member", id: "add", :class => "btn btn-default" %>
   <% end %>
   </div>
 
 <% end %>
 
 
-<h4>members</h4>
+<h3>members</h3>
 <div id="showProjectMembersList">
   <% @project.members.each do |member| %>
   <p id ="member_<%= member.id%>" ><%= member.username %></p>
   <% end %>
 </div>
 
-<%= link_to "back", projects_path  %>
+<%= link_to "back", projects_path, :class => "btn btn-default"  %>
+</div>
