@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-
-$colors: #16a085, #e67e22, #2980b9, #7f8c8d, #c0392b, #f1c40f, #9b59b6, #34495e, #3498db, #9b59b6;
+$colors: #CA2F34, #E25C3B, #E9B94F, #ADCC56, #339AB4, #293372, #28193C, #191918, #761F29, #10232E, #339AB4, #BF5E88;
 $i: 0;
 @each $color in $colors { 
 	.box-#{$i} {
@@ -80,14 +79,6 @@ h2 {
   content: "";
   display: table;
   clear: both;
-}
-
-
-html, body {
-	width: 100%;
-	height: 100%;
-	margin-top: 0;
-	padding: 0;
 }
 
 .slide {
