@@ -35,11 +35,11 @@ class PagesController < ApplicationController
           thing[:channel] = channel
           items << thing
         end
-      rescue OpenURI::HTTPError => e
-        logger.info("Failed to connect to a URL for #{url}")
+      rescue Exception => e
+        logger.info("Failed to connect to a URL for #{url} because: #{e.message}")
       end
     end
-    #items.sort_by!{ |item| item[:pubDate] }.reverse!
+    items.sort_by!{ |item| item[:pubDate] }.reverse!
     items
   end
 
