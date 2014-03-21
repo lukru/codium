@@ -27,6 +27,23 @@ footer {
 	margin-right: 40px;
 }
 
+.notices {
+	float: right;
+	margin-right: 70px;
+	margin-top: 3px;
+	
+	p {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.clearfix {
+	height: 1px;
+}
+
+
+
 @media (max-width: 530px) {
 	
 	.login {
