@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-
-$colors: #16a085, #e67e22, #2980b9, #7f8c8d, #c0392b, #f1c40f, #9b59b6, #34495e, #3498db, #9b59b6;
+$colors: #CA2F34, #E25C3B, #E9B94F, #ADCC56, #339AB4, #293372, #28193C, #191918, #761F29, #10232E, #339AB4, #BF5E88;
 $i: 0;
 @each $color in $colors { 
 	.box-#{$i} {
@@ -75,23 +74,19 @@ STUDENT PAGE STYLES
 
 
 h2 { 
-	font-size: 40px;
+	font-size: 60px;
 	text-transform: uppercase;
 	text-align:center;
+	line-height:70px;
+	font-family: "Roboto";
+	font-weight:900;
+	padding-bottom: 4%;
 }
 
 .clearfix:after {
   content: "";
   display: table;
   clear: both;
-}
-
-
-html, body {
-	width: 100%;
-	height: 100%;
-	margin-top: 0;
-	padding: 0;
 }
 
 .slide {
@@ -220,8 +215,13 @@ h1 {
 	top:50%;  
 	left:50%;  
 	width:500px;  
-	margin-top:-41px;  
-	margin-left:-223px;
+	margin-top:-41px;
+	margin-left:-223px;  
+	z-index:1;
+	border:10px solid #fff;
+	font-family: "Roboto";
+	font-weight:900;
+	padding:20px;
 }
 
 /******************************
@@ -233,7 +233,7 @@ SLIDE 2
 }
 
 #stack {
-	margin-top: 10%;
+	margin-top: 6%;
 
 }
 
@@ -245,12 +245,23 @@ SLIDE 3
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100%;  
-
+	.wrapper{
+		height:0;
+	}
 	h2 {
-		font-size: 40px;
+		font-size: 50px;
 		text-transform: uppercase;
 		color: white;
 		text-align:center;
+		line-height: 70px;
+		font-weight: 400;
+		padding-bottom:0;
+		padding:20px;
+		border:10px solid #fff;
+	}
+	.text-quote{
+		positon:relative;
+		top:40%;
 	}
 }
 
@@ -261,7 +272,7 @@ SLIDE 4
 #slide4{
 	background: #333;	
 	color:white;
-	height: 600px;
+	height: 800px;
 
 	// @extend .h2;
 	// color: white;
@@ -282,8 +293,14 @@ SLIDE 4
 		height: 300px;
 	}
 
-	.students {
+	.students,.teachers {
 		text-align: center;
+	}
+	h3{
+		font-family:Roboto;
+		text-transform: uppercase;
+		font-weight: 400;
+
 	}
 
 }
@@ -307,19 +324,19 @@ SLIDE 4
 
 @media (max-width: $screen-sm-max) { 
 	#slide2{
-		height: 150%;
+		height: 1160px;
 	}
 }
 
 @media (max-width: $screen-xs-max) { 
 	#slide2{
-		height: 210%;
+		height: 1660px;
 	}
 }
 
 @media (max-width: 530px) {
 	#slide2 {
-		height: 260%;
+		height: 2060px;
 	}
 
 	.skillbox{
@@ -330,6 +347,30 @@ SLIDE 4
 			height: 95%;
 		}
 	}	
+	#slide1 h1{
+		top: 28%;
+		width:300px;
+		margin-left: -150px;
+	}
+	#slide3 h2{
+		font-size: 20px;
+		line-height: 30px;
+
+	}
+	#slide4{
+		height:1200px;
+		h2{
+			font-size:40px;
+			border-bottom:1px solid #fff;
+		}
+		.row > div:first-of-type{
+		border-right: 0;
+		}	
+
+		.row > div:last-of-type {
+		border-left: 0;
+		}
+	}
 }
 
 
