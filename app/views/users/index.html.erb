@@ -7,11 +7,14 @@
 		</div>
 		
 		<% @users.each do |user| %>
-		<div id="student" class="col-sm-3 student-image" style="background-image: url(<%= user.image.exists? ? user.image.url : "/assets/placeholder.png" %>);">
- 			<div class="place"><h3 class="name"><%= link_to "#{user.given_name} #{user.family_name}", user_path(user) %></h3>
-			<p class="title"><%= user.tagline %></p>
-			</div>
-		</div>
+		  <div class="col-sm-3">
+        <div class="student-image-container">
+          <%= image_for_user(user, class: 'student-image') %>
+        </div>
+        <div class="place"><h3 class="name"><%= link_to "#{user.given_name} #{user.family_name}", user_path(user) %></h3>
+			    <p class="title"><%= user.tagline %></p>
+			  </div>
+		  </div>
 		<% end %>
 
 	</div>
