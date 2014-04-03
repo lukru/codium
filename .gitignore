@@ -20,3 +20,5 @@
 .DS_Store
 .env
 .idea
+
+/public/system
