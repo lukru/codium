@@ -157,7 +157,8 @@ NAV STYLES
 *******************************/
 
 #affix {
-	z-index: 2;
+	z-index: 20;
+	height:60px;
 }
 
 nav {
@@ -171,6 +172,9 @@ nav {
 	width: 100%;
 }
 
+.left-menu{
+	float:left;
+}
 nav ul li {
 	display: inline-block;
 	padding: 0 10px 0 10px;
