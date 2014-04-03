@@ -222,6 +222,10 @@ SLIDE 2
 #slide2{
 	background-color:#45B29D  ;
 	height:1000px ;
+
+	img {
+		width: 250px;
+	}
 }
 
 #stack {
@@ -233,7 +237,7 @@ SLIDE 2
 SLIDE 3 
 *******************************/
 #slide3{
-	background-image: image-url('somewdihumans.jpg');
+	background-image: image-url('group.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100%;  
