@@ -82,7 +82,8 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email,:password,:password_confirmation,:username,:given_name,:family_name,:tagline,:bio)
+    binding.pry
+    params.require(:user).permit(:email,:password,:password_confirmation,:username,:given_name,:family_name,:tagline,:bio, :twitter, :linkedin, :github, :website, :rss)
   end
 
   def unauthorized_error
