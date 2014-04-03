@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140320053433) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -111,6 +112,14 @@ ActiveRecord::Schema.define(version: 20140320053433) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+=======
+  create_table "skills", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "skill_type"
+  end
+
+>>>>>>> c9b75b42034998c364c00be00ec26fee3ffba647
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -136,16 +145,22 @@ ActiveRecord::Schema.define(version: 20140320053433) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_uploaded_at"
-    t.string   "rss"
     t.string   "role"
     t.string   "twitter"
     t.string   "github"
     t.string   "linkedin"
     t.string   "website"
+    t.string   "rss"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
+
+  create_table "users_skills", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "skill_id"
+    t.integer "id"
+  end
 
 end
