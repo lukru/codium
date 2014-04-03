@@ -71,3 +71,6 @@ gem 'acts-as-taggable-on'
 # Pagination
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+
+# testing coverage checker
+gem 'simplecov'
