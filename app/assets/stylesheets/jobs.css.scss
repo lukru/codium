@@ -9,6 +9,9 @@
 	border-width: 3px;
 	border-color: black;
 	padding: 15px;
+	h2{
+		border-bottom:1px solid #000;
+	}
 }
 
 .button {
@@ -20,4 +23,8 @@
 #job h3 {
 	margin-top: 0px;
 	padding-top: 0px;
+}
+
+.center-text{
+	text-align:center;
 }

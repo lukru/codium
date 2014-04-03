@@ -1,3 +1,43 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  width:90%;
+  margin: 0 auto;
+}
+
+.studentinfo {
+  padding-top: 20px;
+}
+
+.studentinfo-title {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.studentinfo h3 {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  padding: 0;
+  margin: 0;
+}
+
+.studentinfo p {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.projects {
+  padding-top: 25px;
+}
+
+img {
+  width: 100%;
+}

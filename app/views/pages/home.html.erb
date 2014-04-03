@@ -14,29 +14,29 @@
 <%= render 'shared/nav' %>
 
 <script>
-	$(document).ready(function(){
-		var $affixTop = $('#affix');
-		var $imageHeight = $('#slide1').height();
+$(document).ready(function(){
+	var $affixTop = $('#affix');
+	var $imageHeight = $('#slide1').height();
 
-		$(window).on('scroll', function(){
-			if (this.scrollY >= $imageHeight) {
-				$affixTop.slideDown(200);
-			}
-			if (this.scrollY <= $imageHeight) {
-				$affixTop.hide();
-			}	
-		});
+	$(window).on('scroll', function(){
+		if (this.scrollY >= $imageHeight) {
+			$affixTop.slideDown(200);
+		}
+		if (this.scrollY <= $imageHeight) {
+			$affixTop.hide();
+		}	
 	});
+});
 </script>
 
 <script>
-	$(document).ready(function(){
-		$('html, body').animate({ scrollTop: 0 }, 'slow');
-	});
+$(document).ready(function(){
+	$('html, body').animate({ scrollTop: 0 }, 'slow');
+});
 </script>
 
 <style>
-	#affix { display: none; position: fixed; top: 0;}
+#affix { display: none; position: fixed; top: 0;}
 </style>
 
 
@@ -45,97 +45,107 @@
 		<div id="stack" class="container-fluid">
 			<h2>The Stack</h2>
 			<div class="row">
-				
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-0">
+					<%= image_tag('ruby.svg') %>
+					<div class="info">
+						<h3>Ruby</h3>
+						<p>Something about Ruby</p>
+					</div>
+				</div>
+
 				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-1">
 					<%= image_tag('html5.svg') %>
 					<div class="info">
 						<h3>HTML5</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, praesentium dignissimos cumque ipsa dolore et delectus ducimus illum mollitia? </p>
 					</div>
-
 				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-2">
+	
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-2">
+						<%= image_tag('javascript.svg') %>
+						<div class="info">
+							<h3>JavaScript</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-3">
+						<%= image_tag('json.svg') %>
+						<div class="info">
+							<h3>JSON</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-4">
+						<%= image_tag('jquery.svg') %>
+						<div class="info">
+							<h3>jQuery</h3>
+							<ul>
+								<li>Write JavaScript that allows the browser to communicate with the server without reloading the current page.</li>
+								<li>Trigger front-end events that interact with databases and integrate with Rails applications</li>
+								<li></li>
+							</ul>
+							<p> </p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-5">
+						<%= image_tag('tests.svg') %>
+						<div class="info">
+							<h3>Test Driven Development</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-6">
+						<%= image_tag('comp-sci.svg') %>
+						<div class="info">
+							<h3>Computer Science</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-7">
+						<%= image_tag('github.svg') %>
+						<div class="info">
+							<h3>Github</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
+						<%= image_tag('rails.svg') %>
+						<div class="info">
+							<h3>Rails</h3>
+							<p></p>
+						</div>
+					</div>
+
+					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-9">
+						<%= image_tag('backbone.svg') %>
+						<div class="info">
+							<h3>Backbone</h3>
+							<p></p>
+						</div>
+					</div>
+
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-10">
 					<%= image_tag('css3.svg') %>
 					<div class="info">
 						<h3>CSS3</h3>
 						<p></p>
 					</div>
 				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
+
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-11">
 					<%= image_tag('sass.svg') %>
 					<div class="info">
 						<h3>Sass</h3>
 						<p></p>
 					</div>
 				</div>
-
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-5">
-					<%= image_tag('github.svg') %>
-					<div class="info">
-						<h3>Github</h3>
-						<p></p>
-					</div>
-				</div>
-
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-3">
-					<%= image_tag('ruby.svg') %>
-
-					<div class="info">
-						<h3>Ruby</h3>
-						<p>Something about Ruby</p>
-					</div>
-				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-4">
-					<%= image_tag('rails.svg') %>
-					<div class="info">
-						<h3>Rails</h3>
-						<p></p>
-					</div>
-				</div>
 				
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-6">
-					<%= image_tag('javascript.svg') %>
-					<div class="info">
-						<h3>JavaScript</h3>
-						<p></p>
-					</div>
-				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-7">
-					<%= image_tag('jquery.svg') %>
-					<div class="info">
-						<h3>jQuery</h3>
-						<p></p>
-					</div>
-				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
-					<%= image_tag('backbone.svg') %>
-					<div class="info">
-						<h3>Backbone</h3>
-						<p></p>
-					</div>
-				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
-					<%= image_tag('json.svg') %>
-					<div class="info">
-						<h3>JSON</h3>
-						<p></p>
-					</div>
-				</div>
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
-					<%= image_tag('comp-sci.svg') %>
-					<div class="info">
-						<h3>Computer Science</h3>
-						<p></p>
-					</div>
-				</div>
-				
-				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
-					<%= image_tag('tests.svg') %>
-					<div class="info">
-						<h3>Test Driven Development</h3>
-						<p></p>
-					</div>
-				</div>
 			</div>
 
 		</div>
@@ -145,8 +155,8 @@
 
 
 <div class="slide" id="slide3" data-stellar-background-ratio="0">
-	<div class="wrapper" data-stellar-ratio="1"> 
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, iste, odio necessitatibus pariatur a consequatur enim commodi ex impedit nam dolorum cum quisquam eaque quaerat aspernatur dolor repellat. Ex, natus.</h2>
+	<div class="wrapper text-quote" data-stellar-ratio="1"> 
+		<h2><strong>The team</strong></br>Nick : : Alberto : : Federico : : Ed : : Lauren : : Emily : : Luke M : : Sam : : Luke S : : Pranava : : Marcus</h2>
 	</div>
 
 </div><!--End Slide 3-->
@@ -158,15 +168,17 @@
 			<h2>Students and Staff</h2>
 			<div class="row clearfix">
 				<div class="col-sm-4 students">
-					<h2>Students</h2>
+					<h3>Students</h3>
 					<span class="glyphicon glyphicon-user"></span>
 					<p><%= link_to 'View all students', users_path %></p>
 				</div>
 				<div class="col-sm-4 teachers">
-					<h2>Daniel Tsui</h2>
+					<h3>Daniel Tsui</h3>
+					<p>Instructor/Developer In Residence at General Assemb.ly. Passion in Javascript and Ruby on Rails</p>
 				</div>
 				<div class="col-sm-4 teachers">
-					<h2>Taryn East</h2>
+					<h3>Taryn East</h3>
+					<p>Instructor/Developer at General Assemb.ly. Passion in Ruby on Rails.</p>
 				</div>
 			</div>
 		</div>
@@ -179,18 +191,18 @@
 
 
 <script>
-	$(".skillbox").mouseenter(function() {
-		$(this).children('.info').first().animate({marginTop: '-=240px'}, 700);
-		$(this).addClass('img-grey');
-		$(this).removeClass('img-color');
-		console.log('mouseenter');
-	});
-	$(".skillbox").mouseleave(function() {
-		$(this).children('.info').first().animate({marginTop: '+=240px'}, 700);
-		$(this).removeClass('img-grey');
-		$(this).addClass('img-color');
-		console.log('mouseleave');
-	});
+$(".skillbox").mouseenter(function() {
+	$(this).children('.info').first().animate({marginTop: '-=240px'}, 700);
+	$(this).addClass('img-grey');
+	$(this).removeClass('img-color');
+	console.log('mouseenter');
+});
+$(".skillbox").mouseleave(function() {
+	$(this).children('.info').first().animate({marginTop: '+=240px'}, 700);
+	$(this).removeClass('img-grey');
+	$(this).addClass('img-color');
+	console.log('mouseleave');
+});
 </script>
 
 
