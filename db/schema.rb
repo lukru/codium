@@ -93,7 +93,14 @@ ActiveRecord::Schema.define(version: 20140320053433) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -112,14 +119,6 @@ ActiveRecord::Schema.define(version: 20140320053433) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-=======
-  create_table "skills", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "skill_type"
-  end
-
->>>>>>> c9b75b42034998c364c00be00ec26fee3ffba647
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
