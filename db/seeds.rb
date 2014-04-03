@@ -7,12 +7,14 @@ user = User.new
 user.email = 'test@test.com'
 user.password = user.password_confirmation = 'password'
 user.username = 'Test'
+user.rss = 'http://feeds.gizmodo.com.au/gizmodoaustralia'
 user.save
 
 user2 = User.new
 user2.email = 'test2@test.com'
 user2.password = user2.password_confirmation = 'password'
 user2.username = 'Test2'
+user2.rss = 'http://www.sampeters.net/blog/feed'
 user2.save
 
 

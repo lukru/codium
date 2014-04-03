@@ -20,6 +20,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(username: params[:id])
+    @projects = @user.projects 
   end
 
   def edit
@@ -66,7 +68,7 @@ class UsersController < ApplicationController
   def set_user
     @user = User.friendly.find_by(username: params[:id])
     unless @user
-      flash[:error] = "That user doesn't exits"
+      flash[:error] = "That user doesn't exist"
       redirect_to '/'
     end
   end
