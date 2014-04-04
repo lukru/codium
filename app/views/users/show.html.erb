@@ -32,19 +32,26 @@
       </div>
     </div>
 
-        <div class="row projects clearfix" >
-          <% @projects.each do |project| %>
-            <div class="proj col-sm-4">
-              <a href="<%= project.url %>"><%= image_for_project(project) %></a>
-            </div>
-            <div class="proj col-sm-8">
-              <%= link_to project.name, project.url %>
-              <p><%= project.description %></p>
-            </div>
+    <h2>Projects</h2>
+    <div class="row projects clearfix" >
+      <% @projects.each do |project| %>
+      <div class="proj col-sm-4">
+        <a href="<%= project.url %>"><%= image_for_project(project, class: "grid-image") %></a>
+      </div>
+      <div class="proj col-sm-8">
+        <%= link_to project.name, project.url %>
+        <p><%= project.description %></p>
+        <% if project.members.count > 1 %>
+        <h4>Project Team</h4>
+        <% project.members.each do |member| %>
+        <%= member.username %>
+        <% end %>
+        <% end %>
+      </div>
 
-         <% end %>
-       </div>
+      <% end %>
+    </div>
 
- </div>
+  </div>
 </div>
 </div>
