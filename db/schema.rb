@@ -144,11 +144,11 @@ ActiveRecord::Schema.define(version: 20140320053433) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_uploaded_at"
+    t.string   "role"
     t.string   "twitter"
     t.string   "github"
     t.string   "linkedin"
     t.string   "website"
-    t.string   "role"
     t.string   "rss"
   end
 
