@@ -167,7 +167,8 @@
 
 
 <section class="class-shot">
-		<h2><strong>The team</strong></br>Nick : : Alberto : : Federico : : Ed : : Lauren : : Emily : : Luke M : : Sam : : Luke S : : Pranava : : Marcus</h2>
+		<h2 id="class-shot-title">The team</h2>
+		<h2>Nick : : Alberto : : Federico : : Ed : : Lauren : : Emily : : Luke M : : Sam : : Luke S : : Pranava : : Marcus</h2>
 	</div>
 
 </section><!--End Slide 3-->
@@ -216,7 +217,7 @@ $(".skillbox").mouseleave(function() {
 <script>
 $(document).ready(function(){
 	var $affixTop = $('#affix');
-	var $imageHeight = $('#slide1').height();
+	var $imageHeight = $('.header').height();
 
 	$(window).on('scroll', function(){
 		if (this.scrollY >= $imageHeight) {
