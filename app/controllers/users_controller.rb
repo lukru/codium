@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   end
 
+
   private
   def set_user
     @user = User.friendly.find_by(username: params[:username])

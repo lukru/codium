@@ -13,9 +13,12 @@ gem 'pry-rails'
 gem 'friendly_id'
 
 # for testing
-gem 'rspec-rails'
-gem 'capybara'
-
+group :test do
+  gem 'rspec-rails', '~> 2.14.1'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+end
+  
 # Use postgresql as the database for Active Record
 gem 'pg'
 

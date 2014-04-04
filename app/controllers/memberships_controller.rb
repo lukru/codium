@@ -5,6 +5,7 @@ def create
   @membership = Membership.create(membership_params)
   if @membership.save
     respond_to do |format|
+
       format.js
     end
   end
