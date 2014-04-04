@@ -25,3 +25,6 @@
 .idea
 
 /public/system
+
+# ignore test coverage files
+/coverage

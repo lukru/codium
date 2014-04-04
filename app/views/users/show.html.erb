@@ -1,5 +1,6 @@
 <div class="container-fluid profile-page profile">
     <div class="profile">
+
       <h2 class="studentinfo-title"><%= @user.given_name %> <%= @user.family_name %></h2>
       <h3><%= @user.tagline %></h3>
     </div>
@@ -31,8 +32,6 @@
     </div>
 
     <div class="row projects clearfix">
-
-
       <% if @projects.present? %>
           <div class="row projects clearfix">
             <h2> My work </h2>
@@ -56,6 +55,5 @@
       <% end %>
 
     </div>
-
 </div>
 </div>
