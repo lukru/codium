@@ -179,6 +179,7 @@ nav ul li {
 	display: inline-block;
 	padding: 0 10px 0 10px;
 	font-size: 1.1em;
+	padding: 7px;
 }
 
 nav li a:link {
@@ -195,10 +196,11 @@ a:hover {
 SLIDE 1 
 *******************************/
 #slide1{
-	background: image-url('sydney.jpg');
+	background: image-url('home-background.jpg');
 	background-repeat: no-repeat;  
 	background-size: cover;
 	height:100%;
+	-webkit-filter: grayscale(100%);
 }
 
 h1 {
@@ -226,6 +228,9 @@ SLIDE 2
 #slide2{
 	background-color:#45B29D  ;
 	height:1000px ;
+	.info ul li{
+		font-size: 13px;
+	}
 }
 
 #stack {
@@ -237,7 +242,7 @@ SLIDE 2
 SLIDE 3 
 *******************************/
 #slide3{
-	background-image: image-url('somewdihumans.jpg');
+	background: image-url('wdistudents2014.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100%;  
@@ -321,6 +326,9 @@ SLIDE 4
 @media (max-width: $screen-sm-max) { 
 	#slide2{
 		height: 1160px;
+	}
+	.info ul li{
+		font-size: 12px;
 	}
 }
 
