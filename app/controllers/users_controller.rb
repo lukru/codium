@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:profile, :index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_current_user, only: [:profile]
@@ -10,10 +10,13 @@ class UsersController < ApplicationController
 
   rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
-  # def new
-  #   @user = User.new
-  #   authorize @user
-  # end
+  def new
+    # @user = User.new
+    # authorize @user
+    # we decided that anyone can register
+    flash[:notice] = 'Registrations are not open yet, but please check back soon'
+    redirect_to root_path
+  end
 
   def profile
     render :'users/show'
@@ -27,20 +30,24 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # def createstudent
+  def createstudent
 
-  #   @user = User.new(user_params)
+    # @user = User.new(user_params)
 
-  #   authorize @user
+    # authorize @user
 
-  #   respond_to do |format|
-  #     if @user.save
-  #       format.html { redirect_to '/', notice: 'User was successfully created.' }
-  #     else
-  #       format.html { render action: 'new' }
-  #     end
-  #   end
-  # end
+    # respond_to do |format|
+    #   if @user.save
+    #     format.html { redirect_to '/', notice: 'User was successfully created.' }
+    #   else
+    #     format.html { render action: 'new' }
+    #   end
+    # end
+
+    # we decided that anyone can register
+    flash[:notice] = 'Registrations are not open yet, but please check back soon'
+    redirect_to root_path
+  end
 
   def update
     authorize @user
