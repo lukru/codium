@@ -14,8 +14,9 @@ gem 'friendly_id'
 
 # for testing
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.1'
   gem 'capybara'
+  gem 'shoulda-matchers'
   gem 'mocha'
 end
 
@@ -24,6 +25,9 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+
+#fontawesome for icons and fonts
+gem "font-awesome-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -82,3 +86,6 @@ gem 'acts-as-taggable-on'
 # Pagination
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+
+# testing coverage checker
+gem 'simplecov'

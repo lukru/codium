@@ -133,8 +133,8 @@ STACK STYLES
     color: black;
     margin-right: 10px;
 
-    h3 {
-
+    ul {
+			text-align: left;
     }
 }
 
@@ -165,7 +165,8 @@ NAV STYLES
 *******************************/
 
 #affix {
-	z-index: 2;
+	z-index: 20;
+	height:60px;
 }
 
 nav {
@@ -179,10 +180,14 @@ nav {
 	width: 100%;
 }
 
+.left-menu{
+	float:left;
+}
 nav ul li {
 	display: inline-block;
 	padding: 0 10px 0 10px;
 	font-size: 1.1em;
+	padding: 7px;
 }
 
 nav li a:link {
@@ -198,11 +203,35 @@ a:hover {
 /******************************
 SLIDE 1 
 *******************************/
-#slide1{
-	background: image-url('sydney.jpg');
-	background-repeat: no-repeat;  
-	background-size: cover;
-	height:100%;
+// #slide1{
+// 	background: image-url('home-background.jpg');
+// 	background-repeat: no-repeat;  
+// 	background-size: cover;
+// 	height:100%;
+// 	-webkit-filter: grayscale(100%);
+// }
+
+.header {
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: image-url('home-background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.class-shot {
+  display: table;
+  height: 600px;
+  width: 100%;
+  background: image-url('wdistudents2014.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h1 {
@@ -227,14 +256,7 @@ h1 {
 /******************************
 SLIDE 2 
 *******************************/
-#slide2{
-	background-color:#45B29D;
-	height:1000px ;
 
-	img {
-		width: 250px;
-	}
-}
 
 #stack {
 	margin-top: 6%;
@@ -244,30 +266,11 @@ SLIDE 2
 /******************************
 SLIDE 3 
 *******************************/
-#slide3{
-	background-image: image-url('group.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100%;  
-	.wrapper{
-		height:0;
-	}
-	h2 {
-		font-size: 50px;
-		text-transform: uppercase;
-		color: white;
-		text-align:center;
-		line-height: 70px;
-		font-weight: 400;
-		padding-bottom:0;
-		padding:20px;
-		border:10px solid #fff;
-	}
+
 	.text-quote{
 		positon:relative;
 		top:40%;
 	}
-}
 
 /******************************
 SLIDE 4 
@@ -345,6 +348,9 @@ SLIDE 4
 	#slide2{
 		height: 1160px;
 	}
+	.info ul li{
+		font-size: 12px;
+	}
 }
 
 @media (max-width: $screen-xs-max) { 
@@ -391,6 +397,12 @@ SLIDE 4
 		}
 		
 	}
+
+  .login {
+    float: right;
+    margin-top: 6px;
+    margin-right: 40px;
+  }
 }
 
 
