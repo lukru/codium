@@ -14,8 +14,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/pranava.txt
 
 /config/database.yml
 .DS_Store
 .env
 .idea
+
+/public/system

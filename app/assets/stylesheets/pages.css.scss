@@ -1,3 +1,387 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+$colors: #CA2F34, #E25C3B, #E9B94F, #ADCC56, #339AB4, #293372, #28193C, #191918, #761F29, #10232E, #339AB4, #BF5E88;
+$i: 0;
+@each $color in $colors { 
+	.box-#{$i} {
+		background-color: $color;
+	}
+	$i: $i+1;
+}
+
+
+/******************************
+STUDENT PAGE STYLES 
+*******************************/
+
+.students-container {
+
+  .student-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+  }
+  .student-image {
+    width: 100%;
+  }
+
+	.student-image {
+//		height: 300px;
+//		position: relative;
+//		padding: 0;
+//		background-size: cover;
+		-webkit-filter: grayscale(1);
+		transition: 1s;
+
+		&:hover {
+			-webkit-filter: grayscale(0);
+			transition: 1s;
+		}
+
+		.name a, .title a{
+			color: black;
+			background-color:transparent;
+			&:hover{
+				color:#2ecc71;
+				text-decoration: none;
+			}
+		}
+		
+		.name {
+			position:relative;
+			margin: 5px 0 2px 10px;
+		}
+
+		.title {
+			position: relative;
+			margin-left: 10px;
+			font-size: 1.2em;
+		}
+
+		.place {
+			background-color: rgba(255,255,255,0.5);
+			position:absolute;
+			bottom: 0;
+			width: 100%;
+			padding: 0;
+		}
+
+	}
+
+}
+
+
+h2 { 
+	font-size: 60px;
+	text-transform: uppercase;
+	text-align:center;
+	line-height:70px;
+	font-family: "Roboto";
+	font-weight:900;
+	padding-bottom: 4%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slide {
+	background-attachment: fixed;
+	width:100%;
+	height:100%;
+	position: relative;
+}
+
+.wrapper{
+	width:80%;
+	height:100%;
+	margin:0 auto;
+	position:relative;
+}
+.slideno{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	font-size:100px;
+	font-weight:bold;
+	color:rgba(255,255,255,0.3);
+}
+
+
+.skillbox {
+	height: 250px;
+	border: 10px solid white;
+	overflow: hidden;
+	text-align: center;
+	p {
+		text-align: left;
+	}
+}
+
+/******************************
+STACK STYLES 
+*******************************/
+
+.info {
+	// margin-top: 300px;
+    position: absolute;
+    z-index: 2;
+    color: black;
+    margin-right: 10px;
+
+    ul {
+			text-align: left;
+    }
+}
+
+.img-grey {
+	transition: 0.7s;
+	img {
+		-webkit-filter: blur(2px);
+	}
+
+	p {
+		font-size: 0.9em;
+		line-height: 1.2em;
+		font-weight: normal;
+		color: black;
+		margin: 0;
+	}
+
+	background-color: rgba(255,255,255,0.9);
+}
+
+.img-color {
+	transition: 0.7s;
+}
+
+
+/******************************
+NAV STYLES 
+*******************************/
+
+#affix {
+	z-index: 20;
+	height:60px;
+}
+
+nav {
+	padding: 10px 0 10px 0;
+	border-top:	1px solid #cdcdcd;
+	border-bottom:	1px solid #cdcdcd;
+	background-color: rgba(255,255,255,0.7);
+	-webkit-box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	-moz-box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	box-shadow: 0 0 2px 0 rgba(50,50,50,0.3);
+	width: 100%;
+}
+
+.left-menu{
+	float:left;
+}
+nav ul li {
+	display: inline-block;
+	padding: 0 10px 0 10px;
+	font-size: 1.1em;
+	padding: 7px;
+}
+
+nav li a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: red;
+}
+
+
+/******************************
+SLIDE 1 
+*******************************/
+#slide1{
+	background: image-url('home-background.jpg');
+	background-repeat: no-repeat;  
+	background-size: cover;
+	height:100%;
+	-webkit-filter: grayscale(100%);
+}
+
+h1 {
+	margin: 0;
+	font-size: 60px;
+	text-transform: uppercase;
+	color: white;
+	text-align:center;
+	position:fixed;  
+	top:50%;  
+	left:50%;  
+	width:500px;  
+	margin-top:-41px;
+	margin-left:-223px;  
+	z-index:1;
+	border:10px solid #fff;
+	font-family: "Roboto";
+	font-weight:900;
+	padding:20px;
+}
+
+/******************************
+SLIDE 2 
+*******************************/
+#slide2{
+	height:1000px ;
+	.info ul li{
+		font-size: 13px;
+	}
+}
+
+#stack {
+	margin-top: 6%;
+
+}
+
+/******************************
+SLIDE 3 
+*******************************/
+#slide3{
+	background: image-url('wdistudents2014.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;  
+	.wrapper{
+		height:0;
+	}
+	h2 {
+		font-size: 50px;
+		text-transform: uppercase;
+		color: white;
+		text-align:center;
+		line-height: 70px;
+		font-weight: 400;
+		padding-bottom:0;
+		padding:20px;
+		border:10px solid #fff;
+	}
+	.text-quote{
+		positon:relative;
+		top:40%;
+	}
+}
+
+/******************************
+SLIDE 4 
+*******************************/
+
+#slide4{
+	background: #333;	
+	color:white;
+	height: 800px;
+
+	// @extend .h2;
+	// color: white;
+
+	.wrapper {
+		width: 80%;
+	}
+
+	.row > div:first-of-type{
+		border-right: 1px solid white;
+	}
+
+	.row > div:last-of-type {
+		border-left: 1px solid white;
+	}
+
+	.students,.teachers {
+		height: 300px;
+	}
+
+	.students,.teachers {
+		text-align: center;
+	}
+	h3{
+		font-family:Roboto;
+		text-transform: uppercase;
+		font-weight: 400;
+
+	}
+
+}
+
+
+#home-section4{
+	padding-top:10%;
+}
+
+
+// #slide4 .parallaxbg {
+// position:absolute;
+// font-size:28px;
+// color:rgba(51,51,51,0.3);
+// }
+
+.glyphicon-user {
+	font-size: 12em;
+}
+
+
+@media (max-width: $screen-sm-max) { 
+	#slide2{
+		height: 1160px;
+	}
+	.info ul li{
+		font-size: 12px;
+	}
+}
+
+@media (max-width: $screen-xs-max) { 
+	#slide2{
+		height: 1660px;
+	}
+}
+
+@media (max-width: 530px) {
+	#slide2 {
+		height: 2060px;
+	}
+
+	.skillbox{
+		width: 100%;
+		height: 160px;
+
+		img {
+			height: 95%;
+		}
+	}	
+	#slide1 h1{
+		top: 28%;
+		width:300px;
+		margin-left: -150px;
+	}
+	#slide3 h2{
+		font-size: 20px;
+		line-height: 30px;
+
+	}
+	#slide4{
+		height:1200px;
+		h2{
+			font-size:40px;
+			border-bottom:1px solid #fff;
+		}
+		.row > div:first-of-type{
+		border-right: 0;
+		}	
+
+		.row > div:last-of-type {
+		border-left: 0;
+		}
+	}
+}
+
+

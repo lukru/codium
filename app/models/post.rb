@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  has_many :post_members
+  has_many :users, :through => :post_members
 
 
   def word_count
@@ -9,10 +11,12 @@ class Post < ActiveRecord::Base
   def reading_time
     minute = (word_count/250).round(1)
   end
-
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :tag
   has_many :recommendations
 
   has_many :comments
+  
   validates :title, presence: true
 
 

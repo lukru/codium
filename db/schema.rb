@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318042153) do
+ActiveRecord::Schema.define(version: 20140320053433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(version: 20140318042153) do
     t.datetime "updated_at"
   end
 
+  create_table "post_members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -86,6 +93,32 @@ ActiveRecord::Schema.define(version: 20140318042153) do
     t.datetime "updated_at"
   end
 
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -111,10 +144,22 @@ ActiveRecord::Schema.define(version: 20140318042153) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_uploaded_at"
+    t.string   "role"
+    t.string   "twitter"
+    t.string   "github"
+    t.string   "linkedin"
+    t.string   "website"
+    t.string   "rss"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
+
+  create_table "users_skills", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "skill_id"
+    t.integer "id"
+  end
 
 end

@@ -1,14 +1,44 @@
-<h1><%= @title %></h1>
-Email: <%= @user.email %> <br>
-Display Name: <%= @user.username %> <br>
-Given Name: <%= @user.given_name %> <br>
-Family Name: <%= @user.family_name %> <br>
-Tagline: <%= @user.tagline %> <br>
-Bio: <%= @user.bio %> <br>
-Permanent Link: <%= user_url(@user) %> <br>
-<div class="form-group">
+<div class="container-fluid profile-page">
+  <div class ="studentinfo clearfix">
     <div>
-      <%= image_for_user(@user) %>
+      <h2 class="studentinfo-title"><%= @user.given_name %> <%= @user.family_name %></h2>
+      <h3><%= @user.tagline %></h3>            
     </div>
-  </div>
-<%= link_to 'edit', edit_user_registration_path(@user) if @user.is_owner?(current_user) %>
+
+    <div class="row studentinfo">
+      <div class="col-md-4 col-sm-6">
+        <%= image_for_user(@user, :class => "grid-image") %>
+      </div>
+
+      <div class="col-md-8">
+        <p><%= @user.bio %></p>
+
+        <% if @user.linkedin? %>
+          <%= link_to "<i class=\"fa fa-linkedin-square\"></i>".html_safe, @user.linkedin, :target => "_blank" -%>
+        <% end %>
+
+        <% if @user.github? %>
+          <%= link_to "<i class=\"fa fa-github-square\"></i>".html_safe, @user.github, :target => "_blank" -%>
+        <% end %>
+
+        <% if @user.twitter? %>
+          <%= link_to "<i class=\"fa fa-twitter-square\"></i>".html_safe, @user.twitter, :target => "_blank" -%>
+        <% end %>
+
+        <% if @user.website? %>
+          <%= link_to "<i class=\"fa fa-desktop\"></i>".html_safe, @user.website, :target => "_blank" -%>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row projects clearfix">
+      <% @projects.each do |project| %>
+      <div class="proj col-md-4">
+       <%= image_for_project(project, :class => "grid-image") %>
+     </div>
+     <% end %>
+   </div>
+
+ </div>
+</div>
+</div>

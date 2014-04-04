@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 before_action :set_post, only: [ :show, :edit, :update, :destroy]
+
 rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   def index
@@ -15,9 +16,14 @@ rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
   end
 
   def create
+    # tags = params[:post][:tag_list]
+    # tags
     params[:commit] == 'Publish' ? published = true : published = false
     params[:post][:published] = published
-    @post = current_user.posts.new(post_params)
+    # current_user id doesn't save when using current_user.posts.new
+    # @post = current_user.posts.build(post_params)
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
     
     respond_to do |format|
       if @post.save
@@ -77,7 +83,7 @@ rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :subtitle, :body, :published)
+    params.require(:post).permit(:title, :subtitle, :tag_list, :body, :published)
   end
 
 end
