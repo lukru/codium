@@ -46,103 +46,137 @@ $(document).ready(function(){
 			<h2>The Stack</h2>
 			<div class="row">
 				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-0">
-					<%= image_tag('ruby.svg') %>
+					<%= image_tag('ruby.svg', size: "250x250") %>
 					<div class="info">
 						<h3>Ruby</h3>
-						<p>Something about Ruby</p>
+						<ul>
+							<li>Learn the fundamentals of object-oriented programming with Ruby by using variables, operators, conditionals, loops, methods, classes, and module</li>
+							<li>Research and implement Ruby gems to expand functionality</li>
+						</ul>
 					</div>
 				</div>
 
 				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-1">
-					<%= image_tag('html5.svg') %>
+					<%= image_tag('html5.svg', size: "250x250") %>
 					<div class="info">
 						<h3>HTML5</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, praesentium dignissimos cumque ipsa dolore et delectus ducimus illum mollitia? </p>
+						<ul>
+							<li>Practice the user-facing building blocks of the web: HTML tags</li>
+							<li>Implementation and exposure to new syntactic features such as vide, audio and canvas.</li>
+							<li>SVG usage and exposure</li>
+						</ul>
 					</div>
 				</div>
-	
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-2">
-						<%= image_tag('javascript.svg') %>
-						<div class="info">
-							<h3>JavaScript</h3>
-							<p></p>
-						</div>
+				
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-2">
+					<%= image_tag('javascript.svg', size: "250x250") %>
+					<div class="info">
+						<h3>JavaScript</h3>
+						<ul>
+							<li>Integrate JavaScript into Rails apps</li>
+							<li>Create interactive web pages including mouse, scroll, and keyboard event</li>
+							<li> Manipulate the DOM with events and animations with pure JavaScript</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-3">
-						<%= image_tag('json.svg') %>
-						<div class="info">
-							<h3>JSON</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-3">
+					<%= image_tag('json.svg', size: "250x250") %>
+					<div class="info">
+						<h3>JSON</h3>
+						<ul>
+							<li>Write JavaScript (JS) that allows the browser to communicate with the server without reloading the current page, to do things like validate or save form input and refresh images.</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-4">
-						<%= image_tag('jquery.svg') %>
-						<div class="info">
-							<h3>jQuery</h3>
-							<ul>
-								<li>Write JavaScript that allows the browser to communicate with the server without reloading the current page.</li>
-								<li>Trigger front-end events that interact with databases and integrate with Rails applications</li>
-								<li></li>
-							</ul>
-							<p> </p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-4">
+					<%= image_tag('jquery.svg', size: "250x250") %>
+					<div class="info">
+						<h3>jQuery</h3>
+						<ul>
+							<li>Write JavaScript that allows the browser to communicate with the server without reloading the current page.</li>
+							<li>Trigger front-end events that interact with databases and integrate with Rails applications</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-5">
-						<%= image_tag('tests.svg') %>
-						<div class="info">
-							<h3>Test Driven Development</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-5">
+					<%= image_tag('tests.svg', size: "250x250") %>
+					<div class="info">
+						<h3>Test Driven Development</h3>
+						<ul>
+							<li>Build functionality based on tests by applying test-driven development techniques (TDD/BDD)</li>
+							<li> Test Driven Development techniques (TDD/BDD) using RSpec.</li>
+							<li>Write unit tests, functional tests and integration tests.</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-6">
-						<%= image_tag('comp-sci.svg') %>
-						<div class="info">
-							<h3>Computer Science</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-6">
+					<%= image_tag('comp-sci.svg', size: "250x250") %>
+					<div class="info">
+						<h3>Computer Science</h3>
+						<ul>
+							<li>Build programs using the appropriate data structures and algorithms to optimize for performance</li>
+							<li>Put skills to the test with in-class coding challenge</li>
+							<li>Differentiate between various data structures and their purpose </li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-7">
-						<%= image_tag('github.svg') %>
-						<div class="info">
-							<h3>Github</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-7">
+					<%= image_tag('github.svg', size: "250x250") %>
+					<div class="info">
+						<h3>Github</h3>
+						<ul>
+							<li>Implement Git as a source control system by pushing, pulling, and merging code</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
-						<%= image_tag('rails.svg') %>
-						<div class="info">
-							<h3>Rails</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-8">
+					<%= image_tag('rails.svg', size: "250x250") %>
+					<div class="info">
+						<h3>Rails</h3>
+						<ul>
+							<li>Understand the concepts behind an MVC, how models work, what belongs in a controller, and how it all fits together</li>
+							<li>Build custom apps by integrating models with databases, routing techniques, controller logic, and user-friendly views.</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-9">
-						<%= image_tag('backbone.svg') %>
-						<div class="info">
-							<h3>Backbone</h3>
-							<p></p>
-						</div>
+				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-9">
+					<%= image_tag('backbone.svg', size: "250x250") %>
+					<div class="info">
+						<h3>Backbone</h3>
+						<ul>
+							<li>Organize our javascript projects into models, controllers and views.</li>
+							<li>A javascript framework that gave students the freedom to design a full user experience in javascript for the user.</li>
+						</ul>
 					</div>
+				</div>
 
 				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-10">
-					<%= image_tag('css3.svg') %>
+					<%= image_tag('css3.svg', size: "250x250") %>
 					<div class="info">
 						<h3>CSS3</h3>
-						<p></p>
+						<ul>
+							<li>Used new cutting edge CSS3 properties to transform and style our projects.</li>
+							<li>Festures such as 2D/3D animations, transitions, Animations, Box Model, Background and Image effects.</li>
+						</ul>
 					</div>
 				</div>
 
 				<div class="skillbox col-md-3  col-sm-4 col-xs-6 box-11">
-					<%= image_tag('sass.svg') %>
+					<%= image_tag('sass.svg', size: "250x250") %>
 					<div class="info">
 						<h3>Sass</h3>
-						<p></p>
+						<ul>
+							<li>Asset pipeline</li>
+							<li>Mixins</li>
+							<li>Variables</li>
+						</ul>
 					</div>
 				</div>
 				
@@ -195,13 +229,11 @@ $(".skillbox").mouseenter(function() {
 	$(this).children('.info').first().animate({marginTop: '-=240px'}, 700);
 	$(this).addClass('img-grey');
 	$(this).removeClass('img-color');
-	console.log('mouseenter');
 });
 $(".skillbox").mouseleave(function() {
 	$(this).children('.info').first().animate({marginTop: '+=240px'}, 700);
 	$(this).removeClass('img-grey');
 	$(this).addClass('img-color');
-	console.log('mouseleave');
 });
 </script>
 
