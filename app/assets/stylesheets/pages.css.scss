@@ -295,10 +295,23 @@ SLIDE 4
 
 	.students,.teachers {
 		height: 300px;
+		h3 {
+			margin-top: 0;
+		}
+	}
+
+	.students {
+		
 	}
 
 	.students,.teachers {
 		text-align: center;
+	}
+	.teachers {
+		
+		img {
+			height: 80%;
+		}
 	}
 	h3{
 		font-family:Roboto;
@@ -374,6 +387,7 @@ SLIDE 4
 		.row > div:last-of-type {
 		border-left: 0;
 		}
+		
 	}
 }
 
