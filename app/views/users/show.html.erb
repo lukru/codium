@@ -44,7 +44,7 @@
         <% if project.members.count > 1 %>
         <h4>Project Team</h4>
         <% project.members.each do |member| %>
-        <%= member.username %>
+        <%= link_to member.username, user_path(member) %> 
         <% end %>
         <% end %>
       </div>
