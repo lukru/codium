@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 
   rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
-  def new
-    @user = User.new
-    authorize @user
-  end
+  # def new
+  #   @user = User.new
+  #   authorize @user
+  # end
 
   def profile
     render :'users/show'
@@ -27,20 +27,20 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def createstudent
+  # def createstudent
 
-    @user = User.new(user_params)
+  #   @user = User.new(user_params)
 
-    authorize @user
+  #   authorize @user
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to '/', notice: 'User was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @user.save
+  #       format.html { redirect_to '/', notice: 'User was successfully created.' }
+  #     else
+  #       format.html { render action: 'new' }
+  #     end
+  #   end
+  # end
 
   def update
     authorize @user
