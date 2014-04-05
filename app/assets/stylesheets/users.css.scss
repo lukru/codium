@@ -30,6 +30,16 @@
   text-transform: capitalize;
 }
 
+.work-title {
+  font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: capitalize;
+  padding-bottom: 25px;
+}
+
 .studentinfo h3 {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -42,6 +52,8 @@
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: justify;
+  font-size: 115%;
+  line-height: 135%;
 }
 
 .studentinfo a {
@@ -59,6 +71,8 @@
 .studentinfo a:active {
   color: #CCC;
 }
+
+
 
 .projects {
   padding-top: 25px;
